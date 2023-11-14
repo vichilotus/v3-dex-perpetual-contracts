@@ -193,7 +193,7 @@ describe('OrderBook, swap orders', function () {
     [x] cancel order deletes order
     [x] and returns amountIn as token + fees as BNB if path[0] != weth
     [x] otherwise returns fees + amountIn as BNB
-    [x] execute order – revert if doest not exist
+    [x] execute order – revert if does not exist
     [x] if trigger below and minOut insufficient -> revert
     [x] if trigger above and priceRatio is incorrect -> revert
     [x] if priceRatio correct but minOut insufficient -> revert

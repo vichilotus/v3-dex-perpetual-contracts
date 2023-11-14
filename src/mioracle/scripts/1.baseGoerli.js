@@ -128,9 +128,9 @@ async function switchSigner(address) {
   })
 
   return new Promise((resolve) =>
-    rl.question(`wait for switch signer to ${address}\npress enter to continue...`, (ans) => {
+    rl.question(`wait for switch signer to ${address}\npress enter to continue...`, (answer) => {
       rl.close()
-      resolve(ans)
+      resolve(answer)
     })
   )
 }

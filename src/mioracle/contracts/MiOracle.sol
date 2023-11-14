@@ -192,7 +192,7 @@ contract MiOracle is IPriceFeed, OwnableUpgradeable, PausableUpgradeable {
       }
     }
 
-    // calcualte gas consumed and revert tx
+    // calculate gas consumed and revert tx
     uint256 gasUsed = gasStart - gasleft();
     revert(string(abi.encodePacked('{"gasUsed":', StringsUpgradeable.toString(gasUsed), ',"msg":"', message, '"}')));
   }

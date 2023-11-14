@@ -98,9 +98,9 @@ contract MiOracleMock {
                 continue;
             }
 
-            (uint256 backword, uint256 total) = (roundId > _count) ? (_count, _count) : (roundId, roundId);
+            (uint256 backward, uint256 total) = (roundId > _count) ? (_count, _count) : (roundId, roundId);
             for (uint256 j = 0; j < total; j++) {
-                (, uint256 price, , uint256 timestamp) = priceFeed.getPrice(priceFeed.latestRound() + 1 - backword);
+                (, uint256 price, , uint256 timestamp) = priceFeed.getPrice(priceFeed.latestRound() + 1 - backward);
                 uint256 adjust = ((total - j - 1) * _spaceTime);
                 uint256 newTimestamp = block.timestamp - adjust;
                 if (newTimestamp < timestamp) {

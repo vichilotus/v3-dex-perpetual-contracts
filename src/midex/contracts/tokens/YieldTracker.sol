@@ -11,7 +11,7 @@ import './interfaces/IYieldTracker.sol';
 import './interfaces/IYieldToken.sol';
 import '../access/Governable.sol';
 
-// code adapated from https://github.com/trusttoken/smart-contracts/blob/master/contracts/truefi/TrueFarm.sol
+// code adapted from https://github.com/trusttoken/smart-contracts/blob/master/contracts/truefi/TrueFarm.sol
 contract YieldTracker is IYieldTracker, ReentrancyGuard, Governable {
     using SafeMath for uint256;
     using SafeERC20 for IERC20;

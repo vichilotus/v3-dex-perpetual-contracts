@@ -105,7 +105,7 @@ abstract contract Governable {
     }
 
     /**
-     * @dev Truely accept new governor then delete old governor from table
+     * @dev Truly accept new governor then delete old governor from table
      */
     function _acceptGovernance(address newGovernor) internal virtual {
         address oldGovernor = _governor;

@@ -199,7 +199,7 @@ contract TestUpgradeMiOracle is IPriceFeed, OwnableUpgradeable, PausableUpgradea
       }
     }
 
-    // calcualte gas consumed and revert tx
+    // calculate gas consumed and revert tx
     uint256 gasUsed = gasStart - gasleft();
     revert(string(abi.encodePacked('{"gasUsed":', StringsUpgradeable.toString(gasUsed), ',"msg":"', message, '"}')));
   }
@@ -388,7 +388,7 @@ contract TestUpgradeMiOracle is IPriceFeed, OwnableUpgradeable, PausableUpgradea
       return;
     }
 
-    // calcualte req fee
+    // calculate req fee
     uint256 reqFee = (tx.gasprice * _gasUsed * (FULFILL_FEE_PRECISION + fulfillFee)) / FULFILL_FEE_PRECISION;
     IERC20(weth).transferFrom(_from, msg.sender, reqFee);
 
