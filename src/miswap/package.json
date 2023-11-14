@@ -1,0 +1,74 @@
+{
+  "name": "@miswap/core",
+  "description": "Build miswap with solidity 0.8",
+  "version": "1.0.1",
+  "homepage": "https://miswap.org",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/nukewanabe/miswap-solc0.8"
+  },
+  "keywords": [
+    "miswap",
+    "ethereum",
+    "v2",
+    "core"
+  ],
+  "files": [
+    "contracts",
+    "!contracts/test",
+    "typechain-types",
+    "!typechain-types/test",
+    "artifacts/contracts",
+    "!artifacts/test",
+    "!artifacts/contracts/**/*.dbg.json"
+  ],
+  "engines": {
+    "node": ">=18"
+  },
+  "devDependencies": {
+    "@nomicfoundation/hardhat-chai-matchers": "^2.0.2",
+    "@nomicfoundation/hardhat-ethers": "^3.0.4",
+    "@nomicfoundation/hardhat-network-helpers": "^1.0.9",
+    "@nomicfoundation/hardhat-toolbox": "^3.0.0",
+    "@nomicfoundation/hardhat-verify": "^1.1.1",
+    "@nomiclabs/hardhat-ethers": "npm:hardhat-deploy-ethers@^0.4.1",
+    "@openzeppelin/contracts": "^4.9.3",
+    "@openzeppelin/merkle-tree": "^1.0.5",
+    "@typechain/ethers-v6": "^0.4.3",
+    "@typechain/hardhat": "^8.0.3",
+    "@types/chai": "^4.3.10",
+    "@types/mocha": "^10.0.4",
+    "@types/node": "^20.9.0",
+    "@typescript-eslint/eslint-plugin": "^6.10.0",
+    "@typescript-eslint/parser": "^6.10.0",
+    "chai": "^4.3.10",
+    "dotenv": "^16.3.1",
+    "eslint": "^8.53.0",
+    "ethers": "^6.8.1",
+    "hardhat": "^2.19.0",
+    "hardhat-deploy": "^0.11.43",
+    "hardhat-gas-reporter": "^1.0.9",
+    "prettier": "^3.0.3",
+    "prettier-plugin-solidity": "^1.2.0",
+    "solhint": "^3.6.2",
+    "solidity-coverage": "^0.8.5",
+    "ts-node": "^10.9.1",
+    "typechain": "^8.3.2",
+    "typescript": "^5.2.2"
+  },
+  "scripts": {
+    "lint": "prettier --plugin=prettier-plugin-solidity --check src contracts && solhint contracts",
+    "lint:fix": "prettier --plugin=prettier-plugin-solidity --write src contracts",
+    "clean": "rimraf artifacts cache types",
+    "precompile": "pnpm run clean",
+    "compile": "hardhat compile",
+    "build": "pnpm run compile",
+    "test": "hardhat test",
+    "prepublishOnly": "pnpm run test"
+  },
+  "license": "GPL-3.0-or-later",
+  "prettier": {
+    "trailingComma": "all",
+    "printWidth": 140
+  }
+}

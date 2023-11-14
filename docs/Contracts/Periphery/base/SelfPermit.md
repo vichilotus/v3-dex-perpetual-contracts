@@ -28,7 +28,7 @@ Permits this contract to spend a given token from &#x60;msg.sender&#x60;
 | ---- | ---- | ----------- |
 | token | address | The address of the token spent |
 | value | uint256 | The amount that can be spent of token |
-| deadline | uint256 | A timestamp, the current blocktime must be less than or equal to this timestamp |
+| deadline | uint256 | A timestamp, the current blockTime must be less than or equal to this timestamp |
 | v | uint8 | Must produce valid secp256k1 signature from the holder along with `r` and `s` |
 | r | bytes32 | Must produce valid secp256k1 signature from the holder along with `v` and `s` |
 | s | bytes32 | Must produce valid secp256k1 signature from the holder along with `r` and `v` |
@@ -49,7 +49,7 @@ Can be used instead of [#selfPermit](#selfPermit) to prevent calls from failing 
 | ---- | ---- | ----------- |
 | token | address | The address of the token spent |
 | value | uint256 | The amount that can be spent of token |
-| deadline | uint256 | A timestamp, the current blocktime must be less than or equal to this timestamp |
+| deadline | uint256 | A timestamp, the current blockTime must be less than or equal to this timestamp |
 | v | uint8 | Must produce valid secp256k1 signature from the holder along with `r` and `s` |
 | r | bytes32 | Must produce valid secp256k1 signature from the holder along with `v` and `s` |
 | s | bytes32 | Must produce valid secp256k1 signature from the holder along with `r` and `v` |

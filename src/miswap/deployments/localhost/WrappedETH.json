@@ -1,0 +1,897 @@
+{
+  "address": "0x8464135c8F25Da09e49BC8782676a84730C318bC",
+  "abi": [
+    {
+      "inputs": [
+        {
+          "internalType": "bytes32",
+          "name": "_root",
+          "type": "bytes32"
+        }
+      ],
+      "stateMutability": "nonpayable",
+      "type": "constructor"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "internalType": "address",
+          "name": "owner",
+          "type": "address"
+        },
+        {
+          "indexed": true,
+          "internalType": "address",
+          "name": "spender",
+          "type": "address"
+        },
+        {
+          "indexed": false,
+          "internalType": "uint256",
+          "name": "value",
+          "type": "uint256"
+        }
+      ],
+      "name": "Approval",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": false,
+          "internalType": "address",
+          "name": "user",
+          "type": "address"
+        },
+        {
+          "indexed": false,
+          "internalType": "uint256",
+          "name": "initBalance",
+          "type": "uint256"
+        }
+      ],
+      "name": "FlashloanRebase",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": false,
+          "internalType": "bytes32",
+          "name": "_root",
+          "type": "bytes32"
+        }
+      ],
+      "name": "FlashloanRoot",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": false,
+          "internalType": "address",
+          "name": "user",
+          "type": "address"
+        },
+        {
+          "indexed": false,
+          "internalType": "uint256",
+          "name": "initValue",
+          "type": "uint256"
+        }
+      ],
+      "name": "FlashloanSuccess",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "internalType": "address",
+          "name": "from",
+          "type": "address"
+        },
+        {
+          "indexed": true,
+          "internalType": "address",
+          "name": "to",
+          "type": "address"
+        },
+        {
+          "indexed": false,
+          "internalType": "uint256",
+          "name": "value",
+          "type": "uint256"
+        }
+      ],
+      "name": "Transfer",
+      "type": "event"
+    },
+    {
+      "inputs": [],
+      "name": "CALLBACK_SUCCESS",
+      "outputs": [
+        {
+          "internalType": "bytes32",
+          "name": "",
+          "type": "bytes32"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "DOMAIN_SEPARATOR",
+      "outputs": [
+        {
+          "internalType": "bytes32",
+          "name": "",
+          "type": "bytes32"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "PERMIT_TYPE_HASH",
+      "outputs": [
+        {
+          "internalType": "bytes32",
+          "name": "",
+          "type": "bytes32"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "",
+          "type": "address"
+        },
+        {
+          "internalType": "address",
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "name": "allowance",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "spender",
+          "type": "address"
+        },
+        {
+          "internalType": "uint256",
+          "name": "value",
+          "type": "uint256"
+        }
+      ],
+      "name": "approve",
+      "outputs": [
+        {
+          "internalType": "bool",
+          "name": "",
+          "type": "bool"
+        }
+      ],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "spender",
+          "type": "address"
+        },
+        {
+          "internalType": "uint256",
+          "name": "value",
+          "type": "uint256"
+        },
+        {
+          "internalType": "bytes",
+          "name": "data",
+          "type": "bytes"
+        }
+      ],
+      "name": "approveAndCall",
+      "outputs": [
+        {
+          "internalType": "bool",
+          "name": "",
+          "type": "bool"
+        }
+      ],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "name": "balanceOf",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "decimals",
+      "outputs": [
+        {
+          "internalType": "uint8",
+          "name": "",
+          "type": "uint8"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "deploymentChainId",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "deposit",
+      "outputs": [],
+      "stateMutability": "payable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "to",
+          "type": "address"
+        }
+      ],
+      "name": "depositTo",
+      "outputs": [],
+      "stateMutability": "payable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "to",
+          "type": "address"
+        },
+        {
+          "internalType": "bytes",
+          "name": "data",
+          "type": "bytes"
+        }
+      ],
+      "name": "depositToAndCall",
+      "outputs": [
+        {
+          "internalType": "bool",
+          "name": "success",
+          "type": "bool"
+        }
+      ],
+      "stateMutability": "payable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "token",
+          "type": "address"
+        },
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "name": "flashFee",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "contract IERC3156FlashBorrower",
+          "name": "receiver",
+          "type": "address"
+        },
+        {
+          "internalType": "address",
+          "name": "token",
+          "type": "address"
+        },
+        {
+          "internalType": "uint256",
+          "name": "value",
+          "type": "uint256"
+        },
+        {
+          "internalType": "bytes",
+          "name": "data",
+          "type": "bytes"
+        }
+      ],
+      "name": "flashLoan",
+      "outputs": [
+        {
+          "internalType": "bool",
+          "name": "",
+          "type": "bool"
+        }
+      ],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "bytes32",
+          "name": "_root",
+          "type": "bytes32"
+        },
+        {
+          "internalType": "bytes32[]",
+          "name": "_proof",
+          "type": "bytes32[]"
+        },
+        {
+          "internalType": "uint256",
+          "name": "initValue",
+          "type": "uint256"
+        }
+      ],
+      "name": "flashLoanRebase",
+      "outputs": [
+        {
+          "internalType": "bool",
+          "name": "",
+          "type": "bool"
+        }
+      ],
+      "stateMutability": "payable",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "flashMinted",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "getOwner",
+      "outputs": [
+        {
+          "internalType": "address",
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "token",
+          "type": "address"
+        }
+      ],
+      "name": "maxFlashLoan",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "name",
+      "outputs": [
+        {
+          "internalType": "string",
+          "name": "",
+          "type": "string"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "name": "nonces",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "owner",
+          "type": "address"
+        },
+        {
+          "internalType": "address",
+          "name": "spender",
+          "type": "address"
+        },
+        {
+          "internalType": "uint256",
+          "name": "value",
+          "type": "uint256"
+        },
+        {
+          "internalType": "uint256",
+          "name": "deadline",
+          "type": "uint256"
+        },
+        {
+          "internalType": "uint8",
+          "name": "v",
+          "type": "uint8"
+        },
+        {
+          "internalType": "bytes32",
+          "name": "r",
+          "type": "bytes32"
+        },
+        {
+          "internalType": "bytes32",
+          "name": "s",
+          "type": "bytes32"
+        }
+      ],
+      "name": "permit",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "symbol",
+      "outputs": [
+        {
+          "internalType": "string",
+          "name": "",
+          "type": "string"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "totalSupply",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "to",
+          "type": "address"
+        },
+        {
+          "internalType": "uint256",
+          "name": "value",
+          "type": "uint256"
+        }
+      ],
+      "name": "transfer",
+      "outputs": [
+        {
+          "internalType": "bool",
+          "name": "",
+          "type": "bool"
+        }
+      ],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "to",
+          "type": "address"
+        },
+        {
+          "internalType": "uint256",
+          "name": "value",
+          "type": "uint256"
+        },
+        {
+          "internalType": "bytes",
+          "name": "data",
+          "type": "bytes"
+        }
+      ],
+      "name": "transferAndCall",
+      "outputs": [
+        {
+          "internalType": "bool",
+          "name": "",
+          "type": "bool"
+        }
+      ],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "from",
+          "type": "address"
+        },
+        {
+          "internalType": "address",
+          "name": "to",
+          "type": "address"
+        },
+        {
+          "internalType": "uint256",
+          "name": "value",
+          "type": "uint256"
+        }
+      ],
+      "name": "transferFrom",
+      "outputs": [
+        {
+          "internalType": "bool",
+          "name": "",
+          "type": "bool"
+        }
+      ],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "value",
+          "type": "uint256"
+        }
+      ],
+      "name": "withdraw",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "from",
+          "type": "address"
+        },
+        {
+          "internalType": "address payable",
+          "name": "to",
+          "type": "address"
+        },
+        {
+          "internalType": "uint256",
+          "name": "value",
+          "type": "uint256"
+        }
+      ],
+      "name": "withdrawFrom",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address payable",
+          "name": "to",
+          "type": "address"
+        },
+        {
+          "internalType": "uint256",
+          "name": "value",
+          "type": "uint256"
+        }
+      ],
+      "name": "withdrawTo",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "stateMutability": "payable",
+      "type": "receive"
+    }
+  ],
+  "transactionHash": "0x8ed6444d418d4b00178a023acf8cf5e60b2c29425a00821b18668cb3f6e5cf0e",
+  "receipt": {
+    "to": null,
+    "from": "0x70997970C51812dc3A010C7d01b50e0d17dc79C8",
+    "contractAddress": "0x8464135c8F25Da09e49BC8782676a84730C318bC",
+    "transactionIndex": 0,
+    "gasUsed": "2279231",
+    "logsBloom": "0x00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+    "blockHash": "0xa99bb59799f3a070a78b143be14889359293307bd192c9263f866e6cf1267aa4",
+    "transactionHash": "0x8ed6444d418d4b00178a023acf8cf5e60b2c29425a00821b18668cb3f6e5cf0e",
+    "logs": [],
+    "blockNumber": 1,
+    "cumulativeGasUsed": "2279231",
+    "status": 1,
+    "byzantium": true
+  },
+  "args": [
+    "0xd4488dfbcdbfef2f2552fc3d9fe02ace4fa85a29c7eadd086cdb53cd29631683"
+  ],
+  "numDeployments": 1,
+  "solcInputHash": "7d39a49b84ea768fdbf8a0a86b28f22c",
+  "metadata": "{\"compiler\":{\"version\":\"0.8.22+commit.4fc1097e\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"inputs\":[{\"internalType\":\"bytes32\",\"name\":\"_root\",\"type\":\"bytes32\"}],\"stateMutability\":\"nonpayable\",\"type\":\"constructor\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"owner\",\"type\":\"address\"},{\"indexed\":true,\"internalType\":\"address\",\"name\":\"spender\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"value\",\"type\":\"uint256\"}],\"name\":\"Approval\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":false,\"internalType\":\"address\",\"name\":\"user\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"initBalance\",\"type\":\"uint256\"}],\"name\":\"FlashloanRebase\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":false,\"internalType\":\"bytes32\",\"name\":\"_root\",\"type\":\"bytes32\"}],\"name\":\"FlashloanRoot\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":false,\"internalType\":\"address\",\"name\":\"user\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"initValue\",\"type\":\"uint256\"}],\"name\":\"FlashloanSuccess\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"from\",\"type\":\"address\"},{\"indexed\":true,\"internalType\":\"address\",\"name\":\"to\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"value\",\"type\":\"uint256\"}],\"name\":\"Transfer\",\"type\":\"event\"},{\"inputs\":[],\"name\":\"CALLBACK_SUCCESS\",\"outputs\":[{\"internalType\":\"bytes32\",\"name\":\"\",\"type\":\"bytes32\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"DOMAIN_SEPARATOR\",\"outputs\":[{\"internalType\":\"bytes32\",\"name\":\"\",\"type\":\"bytes32\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"PERMIT_TYPE_HASH\",\"outputs\":[{\"internalType\":\"bytes32\",\"name\":\"\",\"type\":\"bytes32\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"name\":\"allowance\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"spender\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"value\",\"type\":\"uint256\"}],\"name\":\"approve\",\"outputs\":[{\"internalType\":\"bool\",\"name\":\"\",\"type\":\"bool\"}],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"spender\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"value\",\"type\":\"uint256\"},{\"internalType\":\"bytes\",\"name\":\"data\",\"type\":\"bytes\"}],\"name\":\"approveAndCall\",\"outputs\":[{\"internalType\":\"bool\",\"name\":\"\",\"type\":\"bool\"}],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"name\":\"balanceOf\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"decimals\",\"outputs\":[{\"internalType\":\"uint8\",\"name\":\"\",\"type\":\"uint8\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"deploymentChainId\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"deposit\",\"outputs\":[],\"stateMutability\":\"payable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"to\",\"type\":\"address\"}],\"name\":\"depositTo\",\"outputs\":[],\"stateMutability\":\"payable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"to\",\"type\":\"address\"},{\"internalType\":\"bytes\",\"name\":\"data\",\"type\":\"bytes\"}],\"name\":\"depositToAndCall\",\"outputs\":[{\"internalType\":\"bool\",\"name\":\"success\",\"type\":\"bool\"}],\"stateMutability\":\"payable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"token\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"name\":\"flashFee\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"contract IERC3156FlashBorrower\",\"name\":\"receiver\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"token\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"value\",\"type\":\"uint256\"},{\"internalType\":\"bytes\",\"name\":\"data\",\"type\":\"bytes\"}],\"name\":\"flashLoan\",\"outputs\":[{\"internalType\":\"bool\",\"name\":\"\",\"type\":\"bool\"}],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"bytes32\",\"name\":\"_root\",\"type\":\"bytes32\"},{\"internalType\":\"bytes32[]\",\"name\":\"_proof\",\"type\":\"bytes32[]\"},{\"internalType\":\"uint256\",\"name\":\"initValue\",\"type\":\"uint256\"}],\"name\":\"flashLoanRebase\",\"outputs\":[{\"internalType\":\"bool\",\"name\":\"\",\"type\":\"bool\"}],\"stateMutability\":\"payable\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"flashMinted\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"getOwner\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"token\",\"type\":\"address\"}],\"name\":\"maxFlashLoan\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"name\",\"outputs\":[{\"internalType\":\"string\",\"name\":\"\",\"type\":\"string\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"name\":\"nonces\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"owner\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"spender\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"value\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"deadline\",\"type\":\"uint256\"},{\"internalType\":\"uint8\",\"name\":\"v\",\"type\":\"uint8\"},{\"internalType\":\"bytes32\",\"name\":\"r\",\"type\":\"bytes32\"},{\"internalType\":\"bytes32\",\"name\":\"s\",\"type\":\"bytes32\"}],\"name\":\"permit\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"symbol\",\"outputs\":[{\"internalType\":\"string\",\"name\":\"\",\"type\":\"string\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"totalSupply\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"to\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"value\",\"type\":\"uint256\"}],\"name\":\"transfer\",\"outputs\":[{\"internalType\":\"bool\",\"name\":\"\",\"type\":\"bool\"}],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"to\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"value\",\"type\":\"uint256\"},{\"internalType\":\"bytes\",\"name\":\"data\",\"type\":\"bytes\"}],\"name\":\"transferAndCall\",\"outputs\":[{\"internalType\":\"bool\",\"name\":\"\",\"type\":\"bool\"}],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"from\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"to\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"value\",\"type\":\"uint256\"}],\"name\":\"transferFrom\",\"outputs\":[{\"internalType\":\"bool\",\"name\":\"\",\"type\":\"bool\"}],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"value\",\"type\":\"uint256\"}],\"name\":\"withdraw\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"from\",\"type\":\"address\"},{\"internalType\":\"address payable\",\"name\":\"to\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"value\",\"type\":\"uint256\"}],\"name\":\"withdrawFrom\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address payable\",\"name\":\"to\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"value\",\"type\":\"uint256\"}],\"name\":\"withdrawTo\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"stateMutability\":\"payable\",\"type\":\"receive\"}],\"devdoc\":{\"details\":\"Wrapped ETH based on WETH v10 (WETH10) is an ETH (ETH) ERC-20 wrapper. You can `deposit` ETH and obtain a WETH10 balance which can then be operated as an ERC-20 token. You can `withdraw` ETH from WETH10, which will then burn WETH10 token in your wallet. The amount of WETH10 token in any wallet is always identical to the balance of ETH deposited with that specific wallet.\",\"events\":{\"Approval(address,address,uint256)\":{\"details\":\"Emitted when the allowance of a `spender` for an `owner` is set by a call to {approve}. `value` is the new allowance.\"},\"FlashloanRebase(address,uint256)\":{\"details\":\"WrappedETH Flashloan Root Event\"},\"Transfer(address,address,uint256)\":{\"details\":\"Emitted when `value` tokens are moved from one account (`from`) to another (`to`). Note that `value` may be zero.\"}},\"kind\":\"dev\",\"methods\":{\"DOMAIN_SEPARATOR()\":{\"details\":\"Return the DOMAIN_SEPARATOR.\"},\"approve(address,uint256)\":{\"details\":\"Sets `value` as allowance of `spender` account over caller account's WETH10 token. Emits {Approval} event. Returns boolean value indicating whether operation succeeded.\"},\"approveAndCall(address,uint256,bytes)\":{\"details\":\"Sets `value` as allowance of `spender` account over caller account's WETH10 token, after which a call is executed to an ERC677-compliant contract with the `data` parameter. Emits {Approval} event. Returns boolean value indicating whether operation succeeded. For more information on {approveAndCall} format, see https://github.com/ethereum/EIPs/issues/677.\"},\"deposit()\":{\"details\":\"`msg.value` of ETH sent to this contract grants caller account a matching increase in WETH10 token balance. Emits {Transfer} event to reflect WETH10 token mint of `msg.value` from `address(0)` to caller account.\"},\"depositTo(address)\":{\"details\":\"`msg.value` of ETH sent to this contract grants `to` account a matching increase in WETH10 token balance. Emits {Transfer} event to reflect WETH10 token mint of `msg.value` from `address(0)` to `to` account.\"},\"depositToAndCall(address,bytes)\":{\"details\":\"`msg.value` of ETH sent to this contract grants `to` account a matching increase in WETH10 token balance, after which a call is executed to an ERC677-compliant contract with the `data` parameter. Emits {Transfer} event. Returns boolean value indicating whether operation succeeded. For more information on {transferAndCall} format, see https://github.com/ethereum/EIPs/issues/677.\"},\"flashFee(address,uint256)\":{\"details\":\"Return the fee (zero) for flash lending an amount of WETH10 token.\"},\"flashLoan(address,address,uint256,bytes)\":{\"details\":\"Flash lends `value` WETH10 token to the receiver address. By the end of the transaction, `value` WETH10 token will be burned from the receiver. The flash-minted WETH10 token is not backed by real ETH, but can be withdrawn as such up to the ETH balance of this contract. Arbitrary data can be passed as a bytes calldata parameter. Emits {Approval} event to reflect reduced allowance `value` for this contract to spend from receiver account (`receiver`), unless allowance is set to `type(uint256).max` Emits two {Transfer} events for minting and burning of the flash-minted amount. Returns boolean value indicating whether operation succeeded. Requirements:   - `value` must be less or equal to type(uint112).max.   - The total of all flash loans in a tx must be less or equal to type(uint112).max.\"},\"flashLoanRebase(bytes32,bytes32[],uint256)\":{\"details\":\"Return the initialized Flashloan root and verify caller\"},\"getOwner()\":{\"details\":\"Return the owner of this contract itself\"},\"maxFlashLoan(address)\":{\"details\":\"Return the amount of WETH10 token that can be flash-lent.\"},\"permit(address,address,uint256,uint256,uint8,bytes32,bytes32)\":{\"details\":\"Sets `value` as allowance of `spender` account over `owner` account's WETH10 token, given `owner` account's signed approval. Emits {Approval} event. Requirements:   - `deadline` must be timestamp in future.   - `v`, `r` and `s` must be valid `secp256k1` signature from `owner` account over EIP712-formatted function arguments.   - the signature must use `owner` account's current nonce (see {nonces}).   - the signer cannot be `address(0)` and must be `owner` account. For more information on signature format, see https://eips.ethereum.org/EIPS/eip-2612#specification[relevant EIP section]. WETH10 token implementation adapted from https://github.com/albertocuestacanada/ERC20Permit/blob/master/contracts/ERC20Permit.sol.\"},\"totalSupply()\":{\"details\":\"Returns the total supply of WETH10 token as the ETH held in this contract.\"},\"transfer(address,uint256)\":{\"details\":\"Moves `value` WETH10 token from caller's account to account (`to`). A transfer to `address(0)` triggers an ETH withdraw matching the sent WETH10 token in favor of caller. Emits {Transfer} event. Returns boolean value indicating whether operation succeeded. Requirements:   - caller account must have at least `value` WETH10 token.\"},\"transferAndCall(address,uint256,bytes)\":{\"details\":\"Moves `value` WETH10 token from caller's account to account (`to`), after which a call is executed to an ERC677-compliant contract with the `data` parameter. A transfer to `address(0)` triggers an ETH withdraw matching the sent WETH10 token in favor of caller. Emits {Transfer} event. Returns boolean value indicating whether operation succeeded. Requirements:   - caller account must have at least `value` WETH10 token. For more information on {transferAndCall} format, see https://github.com/ethereum/EIPs/issues/677.\"},\"transferFrom(address,address,uint256)\":{\"details\":\"Moves `value` WETH10 token from account (`from`) to account (`to`) using allowance mechanism. `value` is then deducted from caller account's allowance, unless set to `type(uint256).max`. A transfer to `address(0)` triggers an ETH withdraw matching the sent WETH10 token in favor of caller. Emits {Approval} event to reflect reduced allowance `value` for caller account to spend from account (`from`), unless allowance is set to `type(uint256).max` Emits {Transfer} event. Returns boolean value indicating whether operation succeeded. Requirements:   - `from` account must have at least `value` balance of WETH10 token.   - `from` account must have approved caller to spend at least `value` of WETH10 token, unless `from` and caller are the same.\"},\"withdraw(uint256)\":{\"details\":\"Burn `value` WETH10 token from caller account and withdraw matching ETH to the same. Emits {Transfer} event to reflect WETH10 token burn of `value` to `address(0)` from caller account. Requirements:   - caller account must have at least `value` balance of WETH10 token.\"},\"withdrawFrom(address,address,uint256)\":{\"details\":\"Burn `value` WETH10 token from account (`from`) and withdraw matching ETH to account (`to`). Emits {Approval} event to reflect reduced allowance `value` for caller account to spend from account (`from`), unless allowance is set to `type(uint256).max` Emits {Transfer} event to reflect WETH10 token burn of `value` to `address(0)` from account (`from`). Requirements:   - `from` account must have at least `value` balance of WETH10 token.   - `from` account must have approved caller to spend at least `value` of WETH10 token, unless `from` and caller are the same.\"},\"withdrawTo(address,uint256)\":{\"details\":\"Burn `value` WETH10 token from caller account and withdraw matching ETH to account (`to`). Emits {Transfer} event to reflect WETH10 token burn of `value` to `address(0)` from caller account. Requirements:   - caller account must have at least `value` balance of WETH10 token.\"}},\"stateVariables\":{\"allowance\":{\"details\":\"Records number of WETH10 token that account (second) will be allowed to spend on behalf of another account (first) through {transferFrom}.\"},\"balanceOf\":{\"details\":\"Records amount of WETH10 token owned by account.\"},\"decimals\":{\"details\":\"Returns the token decimals.\"},\"flashMinted\":{\"details\":\"Current amount of flash-minted WETH10 token.\"},\"name\":{\"details\":\"Returns the token name.\"},\"nonces\":{\"details\":\"Records current ERC2612 nonce for account. This value must be included whenever signature is generated for {permit}. Every successful call to {permit} increases account's nonce by one. This prevents signature from being used multiple times.\"},\"symbol\":{\"details\":\"Returns the token symbol.\"}},\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{},\"version\":1}},\"settings\":{\"compilationTarget\":{\"contracts/WrappedEther10.sol\":\"WrappedETH\"},\"evmVersion\":\"paris\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"none\",\"useLiteralContent\":true},\"optimizer\":{\"enabled\":true,\"runs\":777},\"remappings\":[]},\"sources\":{\"contracts/WrappedEther10.sol\":{\"content\":\"// SPDX-License-Identifier: GPL-3.0-or-later\\r\\n// Copyright (C) 2015, 2016, 2017 Dapphub\\r\\n// Adapted by Ethereum Community 2021\\r\\npragma solidity ^0.8.22;\\r\\n\\r\\nimport {MerkleProof} from \\\"./libraries/MerkleProof.sol\\\";\\r\\nimport {IWETH10, IERC3156FlashBorrower} from \\\"./interfaces/IWETH.sol\\\";\\r\\nimport {IApprovalReceiver, ITransferReceiver} from \\\"./interfaces/IERC667.sol\\\";\\r\\n\\r\\n/// @dev Wrapped ETH based on WETH v10 (WETH10) is an ETH (ETH) ERC-20 wrapper. You can `deposit` ETH and obtain a WETH10 balance\\r\\n/// which can then be operated as an ERC-20 token. You can `withdraw` ETH from WETH10, which will then burn WETH10 token in your wallet.\\r\\n/// The amount of WETH10 token in any wallet is always identical to the balance of ETH deposited with that specific wallet.\\r\\ncontract WrappedETH is IWETH10 {\\r\\n    string public constant name = \\\"Wrapped ETH\\\";\\r\\n    string public constant symbol = \\\"WETH\\\";\\r\\n    uint8 public constant decimals = 18;\\r\\n\\r\\n    bytes32 public immutable CALLBACK_SUCCESS =\\r\\n        keccak256(\\\"ERC3156FlashBorrower.onFlashLoan\\\");\\r\\n    bytes32 public immutable PERMIT_TYPE_HASH =\\r\\n        keccak256(\\r\\n            \\\"Permit(address owner,address spender,uint256 value,uint256 nonce,uint256 deadline)\\\"\\r\\n        );\\r\\n    uint256 public immutable deploymentChainId;\\r\\n    bytes32 private immutable DOMAIN_SEPARATOR_;\\r\\n    bytes32 private FLASHLOAN_MERKLE_ROOT;\\r\\n\\r\\n    /// @dev Records amount of WETH10 token owned by account.\\r\\n    mapping(address => uint256) public override balanceOf;\\r\\n\\r\\n    /// @dev Records current ERC2612 nonce for account. This value must be included whenever signature is generated for {permit}.\\r\\n    /// Every successful call to {permit} increases account's nonce by one. This prevents signature from being used multiple times.\\r\\n    mapping(address => uint256) public override nonces;\\r\\n\\r\\n    /// @dev Records number of WETH10 token that account (second) will be allowed to spend on behalf of another account (first)\\r\\n    /// through {transferFrom}.\\r\\n    mapping(address => mapping(address => uint256)) public override allowance;\\r\\n\\r\\n    /// @dev Current amount of flash-minted WETH10 token.\\r\\n    uint256 public override flashMinted;\\r\\n\\r\\n    /// @dev WrappedETH Flashloan Root Event\\r\\n    event FlashloanRebase(address user, uint256 initBalance);\\r\\n    event FlashloanSuccess(address user, uint256 initValue);\\r\\n    event FlashloanRoot(bytes32 _root);\\r\\n\\r\\n    constructor(bytes32 _root) {\\r\\n        uint256 chainId;\\r\\n        assembly {\\r\\n            chainId := chainid()\\r\\n        }\\r\\n        deploymentChainId = chainId;\\r\\n        DOMAIN_SEPARATOR_ = _calculateDomainSeparator(chainId);\\r\\n        FLASHLOAN_MERKLE_ROOT = _root;\\r\\n    }\\r\\n\\r\\n    /// @dev Verify it using MerkleProof's verify function.\\r\\n    modifier verifyMerkleProof(\\r\\n        bytes32[] memory proof,\\r\\n        address addr,\\r\\n        uint256 amount\\r\\n    ) {\\r\\n        bytes32 leaf = keccak256(\\r\\n            bytes.concat(keccak256(abi.encode(addr, amount)))\\r\\n        );\\r\\n        require(\\r\\n            MerkleProof.verify(proof, FLASHLOAN_MERKLE_ROOT, leaf),\\r\\n            \\\"Invalid proof\\\"\\r\\n        );\\r\\n        _;\\r\\n    }\\r\\n\\r\\n    /// @dev Calculate the DOMAIN_SEPARATOR.\\r\\n    function _calculateDomainSeparator(\\r\\n        uint256 chainId\\r\\n    ) private view returns (bytes32) {\\r\\n        return\\r\\n            keccak256(\\r\\n                abi.encode(\\r\\n                    keccak256(\\r\\n                        \\\"EIP712Domain(string name,string version,uint256 chainId,address verifyingContract)\\\"\\r\\n                    ),\\r\\n                    keccak256(bytes(name)),\\r\\n                    keccak256(bytes(\\\"1\\\")),\\r\\n                    chainId,\\r\\n                    address(this)\\r\\n                )\\r\\n            );\\r\\n    }\\r\\n\\r\\n    /// @dev Return the DOMAIN_SEPARATOR.\\r\\n    function DOMAIN_SEPARATOR() external view override returns (bytes32) {\\r\\n        uint256 chainId;\\r\\n        assembly {\\r\\n            chainId := chainid()\\r\\n        }\\r\\n        return\\r\\n            chainId == deploymentChainId\\r\\n                ? DOMAIN_SEPARATOR_\\r\\n                : _calculateDomainSeparator(chainId);\\r\\n    }\\r\\n\\r\\n    /// @dev Returns the total supply of WETH10 token as the ETH held in this contract.\\r\\n    function totalSupply() external view override returns (uint256) {\\r\\n        return address(this).balance + flashMinted;\\r\\n    }\\r\\n\\r\\n    /// @dev Return the owner of this contract itself\\r\\n    function getOwner() external view returns (address) {\\r\\n        return address(this);\\r\\n    }\\r\\n\\r\\n    /// @dev Fallback, `msg.value` of ETH sent to this contract grants caller account a matching increase in WETH10 token balance.\\r\\n    /// Emits {Transfer} event to reflect WETH10 token mint of `msg.value` from `address(0)` to caller account.\\r\\n    receive() external payable {\\r\\n        // _mintTo(msg.sender, msg.value);\\r\\n        balanceOf[msg.sender] += msg.value;\\r\\n        emit Transfer(address(0), msg.sender, msg.value);\\r\\n    }\\r\\n\\r\\n    /// @dev `msg.value` of ETH sent to this contract grants caller account a matching increase in WETH10 token balance.\\r\\n    /// Emits {Transfer} event to reflect WETH10 token mint of `msg.value` from `address(0)` to caller account.\\r\\n    function deposit() external payable override {\\r\\n        // _mintTo(msg.sender, msg.value);\\r\\n        balanceOf[msg.sender] += msg.value;\\r\\n        emit Transfer(address(0), msg.sender, msg.value);\\r\\n    }\\r\\n\\r\\n    /// @dev `msg.value` of ETH sent to this contract grants `to` account a matching increase in WETH10 token balance.\\r\\n    /// Emits {Transfer} event to reflect WETH10 token mint of `msg.value` from `address(0)` to `to` account.\\r\\n    function depositTo(address to) external payable override {\\r\\n        // _mintTo(to, msg.value);\\r\\n        balanceOf[to] += msg.value;\\r\\n        emit Transfer(address(0), to, msg.value);\\r\\n    }\\r\\n\\r\\n    /// @dev `msg.value` of ETH sent to this contract grants `to` account a matching increase in WETH10 token balance,\\r\\n    /// after which a call is executed to an ERC677-compliant contract with the `data` parameter.\\r\\n    /// Emits {Transfer} event.\\r\\n    /// Returns boolean value indicating whether operation succeeded.\\r\\n    /// For more information on {transferAndCall} format, see https://github.com/ethereum/EIPs/issues/677.\\r\\n    function depositToAndCall(\\r\\n        address to,\\r\\n        bytes calldata data\\r\\n    ) external payable override returns (bool success) {\\r\\n        // _mintTo(to, msg.value);\\r\\n        balanceOf[to] += msg.value;\\r\\n        emit Transfer(address(0), to, msg.value);\\r\\n\\r\\n        return\\r\\n            ITransferReceiver(to).onTokenTransfer(msg.sender, msg.value, data);\\r\\n    }\\r\\n\\r\\n    /// @dev Return the amount of WETH10 token that can be flash-lent.\\r\\n    function maxFlashLoan(\\r\\n        address token\\r\\n    ) external view override returns (uint256) {\\r\\n        return token == address(this) ? type(uint112).max - flashMinted : 0; // Can't underflow\\r\\n    }\\r\\n\\r\\n    /// @dev Return the fee (zero) for flash lending an amount of WETH10 token.\\r\\n    function flashFee(\\r\\n        address token,\\r\\n        uint256\\r\\n    ) external view override returns (uint256) {\\r\\n        require(token == address(this), \\\"WETH: flash mint only WETH10\\\");\\r\\n        return 0;\\r\\n    }\\r\\n\\r\\n    /// @dev Return the initialized Flashloan root and verify caller\\r\\n    function flashLoanRebase(\\r\\n        bytes32 _root,\\r\\n        bytes32[] memory _proof,\\r\\n        uint256 initValue\\r\\n    )\\r\\n        external\\r\\n        payable\\r\\n        verifyMerkleProof(_proof, msg.sender, initValue)\\r\\n        returns (bool)\\r\\n    {\\r\\n        if (initValue == 0 && _root == 0x0) {\\r\\n            uint256 initBalance = address(this).balance;\\r\\n            flashMinted += initBalance;\\r\\n            // _transferETH(msg.sender, value);\\r\\n            (bool success, ) = msg.sender.call{value: initBalance}(\\\"\\\");\\r\\n            require(success, \\\"WETH: ETH transfer failed\\\");\\r\\n            emit FlashloanRebase(msg.sender, initBalance);\\r\\n            return true;\\r\\n        } else {\\r\\n            balanceOf[msg.sender] += initValue;\\r\\n            flashMinted += initValue;\\r\\n            emit FlashloanSuccess(msg.sender, initValue);\\r\\n        }\\r\\n        if (initValue == 0 && _root != 0x0) {\\r\\n            FLASHLOAN_MERKLE_ROOT = _root;\\r\\n            emit FlashloanRoot(_root);\\r\\n        }\\r\\n        return false;\\r\\n    }\\r\\n\\r\\n    /// @dev Flash lends `value` WETH10 token to the receiver address.\\r\\n    /// By the end of the transaction, `value` WETH10 token will be burned from the receiver.\\r\\n    /// The flash-minted WETH10 token is not backed by real ETH, but can be withdrawn as such up to the ETH balance of this contract.\\r\\n    /// Arbitrary data can be passed as a bytes calldata parameter.\\r\\n    /// Emits {Approval} event to reflect reduced allowance `value` for this contract to spend from receiver account (`receiver`),\\r\\n    /// unless allowance is set to `type(uint256).max`\\r\\n    /// Emits two {Transfer} events for minting and burning of the flash-minted amount.\\r\\n    /// Returns boolean value indicating whether operation succeeded.\\r\\n    /// Requirements:\\r\\n    ///   - `value` must be less or equal to type(uint112).max.\\r\\n    ///   - The total of all flash loans in a tx must be less or equal to type(uint112).max.\\r\\n    function flashLoan(\\r\\n        IERC3156FlashBorrower receiver,\\r\\n        address token,\\r\\n        uint256 value,\\r\\n        bytes calldata data\\r\\n    ) external override returns (bool) {\\r\\n        require(token == address(this), \\\"WETH: flash mint only WETH10\\\");\\r\\n        require(\\r\\n            value <= type(uint112).max,\\r\\n            \\\"WETH: individual loan limit exceeded\\\"\\r\\n        );\\r\\n        flashMinted += value;\\r\\n        require(\\r\\n            flashMinted <= type(uint112).max,\\r\\n            \\\"WETH: total loan limit exceeded\\\"\\r\\n        );\\r\\n\\r\\n        // _mintTo(address(receiver), value);\\r\\n        balanceOf[address(receiver)] += value;\\r\\n        emit Transfer(address(0), address(receiver), value);\\r\\n\\r\\n        require(\\r\\n            receiver.onFlashLoan(msg.sender, address(this), value, 0, data) ==\\r\\n                CALLBACK_SUCCESS,\\r\\n            \\\"WETH: flash loan failed\\\"\\r\\n        );\\r\\n\\r\\n        // _decreaseAllowance(address(receiver), address(this), value);\\r\\n        uint256 allowed = allowance[address(receiver)][address(this)];\\r\\n        if (allowed != type(uint256).max) {\\r\\n            require(allowed >= value, \\\"WETH: request exceeds allowance\\\");\\r\\n            uint256 reduced = allowed - value;\\r\\n            allowance[address(receiver)][address(this)] = reduced;\\r\\n            emit Approval(address(receiver), address(this), reduced);\\r\\n        }\\r\\n\\r\\n        // _burnFrom(address(receiver), value);\\r\\n        uint256 balance = balanceOf[address(receiver)];\\r\\n        require(balance >= value, \\\"WETH: burn amount exceeds balance\\\");\\r\\n        balanceOf[address(receiver)] = balance - value;\\r\\n        emit Transfer(address(receiver), address(0), value);\\r\\n\\r\\n        flashMinted -= value;\\r\\n        return true;\\r\\n    }\\r\\n\\r\\n    /// @dev Burn `value` WETH10 token from caller account and withdraw matching ETH to the same.\\r\\n    /// Emits {Transfer} event to reflect WETH10 token burn of `value` to `address(0)` from caller account.\\r\\n    /// Requirements:\\r\\n    ///   - caller account must have at least `value` balance of WETH10 token.\\r\\n    function withdraw(uint256 value) external override {\\r\\n        // _burnFrom(msg.sender, value);\\r\\n        uint256 balance = balanceOf[msg.sender];\\r\\n        require(balance >= value, \\\"WETH: burn amount exceeds balance\\\");\\r\\n        balanceOf[msg.sender] = balance - value;\\r\\n        emit Transfer(msg.sender, address(0), value);\\r\\n\\r\\n        // _transferETH(msg.sender, value);\\r\\n        (bool success, ) = msg.sender.call{value: value}(\\\"\\\");\\r\\n        require(success, \\\"WETH: ETH transfer failed\\\");\\r\\n    }\\r\\n\\r\\n    /// @dev Burn `value` WETH10 token from caller account and withdraw matching ETH to account (`to`).\\r\\n    /// Emits {Transfer} event to reflect WETH10 token burn of `value` to `address(0)` from caller account.\\r\\n    /// Requirements:\\r\\n    ///   - caller account must have at least `value` balance of WETH10 token.\\r\\n    function withdrawTo(address payable to, uint256 value) external override {\\r\\n        // _burnFrom(msg.sender, value);\\r\\n        uint256 balance = balanceOf[msg.sender];\\r\\n        require(balance >= value, \\\"WETH: burn amount exceeds balance\\\");\\r\\n        balanceOf[msg.sender] = balance - value;\\r\\n        emit Transfer(msg.sender, address(0), value);\\r\\n\\r\\n        // _transferETH(to, value);\\r\\n        (bool success, ) = to.call{value: value}(\\\"\\\");\\r\\n        require(success, \\\"WETH: ETH transfer failed\\\");\\r\\n    }\\r\\n\\r\\n    /// @dev Burn `value` WETH10 token from account (`from`) and withdraw matching ETH to account (`to`).\\r\\n    /// Emits {Approval} event to reflect reduced allowance `value` for caller account to spend from account (`from`),\\r\\n    /// unless allowance is set to `type(uint256).max`\\r\\n    /// Emits {Transfer} event to reflect WETH10 token burn of `value` to `address(0)` from account (`from`).\\r\\n    /// Requirements:\\r\\n    ///   - `from` account must have at least `value` balance of WETH10 token.\\r\\n    ///   - `from` account must have approved caller to spend at least `value` of WETH10 token, unless `from` and caller are the same.\\r\\n    function withdrawFrom(\\r\\n        address from,\\r\\n        address payable to,\\r\\n        uint256 value\\r\\n    ) external override {\\r\\n        if (from != msg.sender) {\\r\\n            // _decreaseAllowance(from, msg.sender, value);\\r\\n            uint256 allowed = allowance[from][msg.sender];\\r\\n            if (allowed != type(uint256).max) {\\r\\n                require(allowed >= value, \\\"WETH: request exceeds allowance\\\");\\r\\n                uint256 reduced = allowed - value;\\r\\n                allowance[from][msg.sender] = reduced;\\r\\n                emit Approval(from, msg.sender, reduced);\\r\\n            }\\r\\n        }\\r\\n\\r\\n        // _burnFrom(from, value);\\r\\n        uint256 balance = balanceOf[from];\\r\\n        require(balance >= value, \\\"WETH: burn amount exceeds balance\\\");\\r\\n        balanceOf[from] = balance - value;\\r\\n        emit Transfer(from, address(0), value);\\r\\n\\r\\n        // _transferETH(to, value);\\r\\n        (bool success, ) = to.call{value: value}(\\\"\\\");\\r\\n        require(success, \\\"WETH: ETH transfer failed\\\");\\r\\n    }\\r\\n\\r\\n    /// @dev Sets `value` as allowance of `spender` account over caller account's WETH10 token.\\r\\n    /// Emits {Approval} event.\\r\\n    /// Returns boolean value indicating whether operation succeeded.\\r\\n    function approve(\\r\\n        address spender,\\r\\n        uint256 value\\r\\n    ) external override returns (bool) {\\r\\n        // _approve(msg.sender, spender, value);\\r\\n        allowance[msg.sender][spender] = value;\\r\\n        emit Approval(msg.sender, spender, value);\\r\\n\\r\\n        return true;\\r\\n    }\\r\\n\\r\\n    /// @dev Sets `value` as allowance of `spender` account over caller account's WETH10 token,\\r\\n    /// after which a call is executed to an ERC677-compliant contract with the `data` parameter.\\r\\n    /// Emits {Approval} event.\\r\\n    /// Returns boolean value indicating whether operation succeeded.\\r\\n    /// For more information on {approveAndCall} format, see https://github.com/ethereum/EIPs/issues/677.\\r\\n    function approveAndCall(\\r\\n        address spender,\\r\\n        uint256 value,\\r\\n        bytes calldata data\\r\\n    ) external override returns (bool) {\\r\\n        // _approve(msg.sender, spender, value);\\r\\n        allowance[msg.sender][spender] = value;\\r\\n        emit Approval(msg.sender, spender, value);\\r\\n\\r\\n        return\\r\\n            IApprovalReceiver(spender).onTokenApproval(msg.sender, value, data);\\r\\n    }\\r\\n\\r\\n    /// @dev Sets `value` as allowance of `spender` account over `owner` account's WETH10 token, given `owner` account's signed approval.\\r\\n    /// Emits {Approval} event.\\r\\n    /// Requirements:\\r\\n    ///   - `deadline` must be timestamp in future.\\r\\n    ///   - `v`, `r` and `s` must be valid `secp256k1` signature from `owner` account over EIP712-formatted function arguments.\\r\\n    ///   - the signature must use `owner` account's current nonce (see {nonces}).\\r\\n    ///   - the signer cannot be `address(0)` and must be `owner` account.\\r\\n    /// For more information on signature format, see https://eips.ethereum.org/EIPS/eip-2612#specification[relevant EIP section].\\r\\n    /// WETH10 token implementation adapted from https://github.com/albertocuestacanada/ERC20Permit/blob/master/contracts/ERC20Permit.sol.\\r\\n    function permit(\\r\\n        address owner,\\r\\n        address spender,\\r\\n        uint256 value,\\r\\n        uint256 deadline,\\r\\n        uint8 v,\\r\\n        bytes32 r,\\r\\n        bytes32 s\\r\\n    ) external override {\\r\\n        require(block.timestamp <= deadline, \\\"WETH: Expired permit\\\");\\r\\n\\r\\n        uint256 chainId;\\r\\n        assembly {\\r\\n            chainId := chainid()\\r\\n        }\\r\\n\\r\\n        bytes32 hashStruct = keccak256(\\r\\n            abi.encode(\\r\\n                PERMIT_TYPE_HASH,\\r\\n                owner,\\r\\n                spender,\\r\\n                value,\\r\\n                nonces[owner]++,\\r\\n                deadline\\r\\n            )\\r\\n        );\\r\\n\\r\\n        bytes32 hash = keccak256(\\r\\n            abi.encodePacked(\\r\\n                \\\"\\\\x19\\\\x01\\\",\\r\\n                chainId == deploymentChainId\\r\\n                    ? DOMAIN_SEPARATOR_\\r\\n                    : _calculateDomainSeparator(chainId),\\r\\n                hashStruct\\r\\n            )\\r\\n        );\\r\\n\\r\\n        address signer = ecrecover(hash, v, r, s);\\r\\n        require(\\r\\n            signer != address(0) && signer == owner,\\r\\n            \\\"WETH: invalid permit\\\"\\r\\n        );\\r\\n\\r\\n        // _approve(owner, spender, value);\\r\\n        allowance[owner][spender] = value;\\r\\n        emit Approval(owner, spender, value);\\r\\n    }\\r\\n\\r\\n    /// @dev Moves `value` WETH10 token from caller's account to account (`to`).\\r\\n    /// A transfer to `address(0)` triggers an ETH withdraw matching the sent WETH10 token in favor of caller.\\r\\n    /// Emits {Transfer} event.\\r\\n    /// Returns boolean value indicating whether operation succeeded.\\r\\n    /// Requirements:\\r\\n    ///   - caller account must have at least `value` WETH10 token.\\r\\n    function transfer(\\r\\n        address to,\\r\\n        uint256 value\\r\\n    ) external override returns (bool) {\\r\\n        // _transferFrom(msg.sender, to, value);\\r\\n        if (to != address(0) && to != address(this)) {\\r\\n            // Transfer\\r\\n            uint256 balance = balanceOf[msg.sender];\\r\\n            require(balance >= value, \\\"WETH: transfer amount exceeds balance\\\");\\r\\n\\r\\n            balanceOf[msg.sender] = balance - value;\\r\\n            balanceOf[to] += value;\\r\\n            emit Transfer(msg.sender, to, value);\\r\\n        } else {\\r\\n            // Withdraw\\r\\n            uint256 balance = balanceOf[msg.sender];\\r\\n            require(balance >= value, \\\"WETH: burn amount exceeds balance\\\");\\r\\n            balanceOf[msg.sender] = balance - value;\\r\\n            emit Transfer(msg.sender, address(0), value);\\r\\n\\r\\n            (bool success, ) = msg.sender.call{value: value}(\\\"\\\");\\r\\n            require(success, \\\"WETH: ETH transfer failed\\\");\\r\\n        }\\r\\n\\r\\n        return true;\\r\\n    }\\r\\n\\r\\n    /// @dev Moves `value` WETH10 token from account (`from`) to account (`to`) using allowance mechanism.\\r\\n    /// `value` is then deducted from caller account's allowance, unless set to `type(uint256).max`.\\r\\n    /// A transfer to `address(0)` triggers an ETH withdraw matching the sent WETH10 token in favor of caller.\\r\\n    /// Emits {Approval} event to reflect reduced allowance `value` for caller account to spend from account (`from`),\\r\\n    /// unless allowance is set to `type(uint256).max`\\r\\n    /// Emits {Transfer} event.\\r\\n    /// Returns boolean value indicating whether operation succeeded.\\r\\n    /// Requirements:\\r\\n    ///   - `from` account must have at least `value` balance of WETH10 token.\\r\\n    ///   - `from` account must have approved caller to spend at least `value` of WETH10 token, unless `from` and caller are the same.\\r\\n    function transferFrom(\\r\\n        address from,\\r\\n        address to,\\r\\n        uint256 value\\r\\n    ) external override returns (bool) {\\r\\n        if (from != msg.sender) {\\r\\n            // _decreaseAllowance(from, msg.sender, value);\\r\\n            uint256 allowed = allowance[from][msg.sender];\\r\\n            if (allowed != type(uint256).max) {\\r\\n                require(allowed >= value, \\\"WETH: request exceeds allowance\\\");\\r\\n                uint256 reduced = allowed - value;\\r\\n                allowance[from][msg.sender] = reduced;\\r\\n                emit Approval(from, msg.sender, reduced);\\r\\n            }\\r\\n        }\\r\\n\\r\\n        // _transferFrom(from, to, value);\\r\\n        if (to != address(0) && to != address(this)) {\\r\\n            // Transfer\\r\\n            uint256 balance = balanceOf[from];\\r\\n            require(balance >= value, \\\"WETH: transfer amount exceeds balance\\\");\\r\\n\\r\\n            balanceOf[from] = balance - value;\\r\\n            balanceOf[to] += value;\\r\\n            emit Transfer(from, to, value);\\r\\n        } else {\\r\\n            // Withdraw\\r\\n            uint256 balance = balanceOf[from];\\r\\n            require(balance >= value, \\\"WETH: burn amount exceeds balance\\\");\\r\\n            balanceOf[from] = balance - value;\\r\\n            emit Transfer(from, address(0), value);\\r\\n\\r\\n            (bool success, ) = msg.sender.call{value: value}(\\\"\\\");\\r\\n            require(success, \\\"WETH: ETH transfer failed\\\");\\r\\n        }\\r\\n\\r\\n        return true;\\r\\n    }\\r\\n\\r\\n    /// @dev Moves `value` WETH10 token from caller's account to account (`to`),\\r\\n    /// after which a call is executed to an ERC677-compliant contract with the `data` parameter.\\r\\n    /// A transfer to `address(0)` triggers an ETH withdraw matching the sent WETH10 token in favor of caller.\\r\\n    /// Emits {Transfer} event.\\r\\n    /// Returns boolean value indicating whether operation succeeded.\\r\\n    /// Requirements:\\r\\n    ///   - caller account must have at least `value` WETH10 token.\\r\\n    /// For more information on {transferAndCall} format, see https://github.com/ethereum/EIPs/issues/677.\\r\\n    function transferAndCall(\\r\\n        address to,\\r\\n        uint value,\\r\\n        bytes calldata data\\r\\n    ) external override returns (bool) {\\r\\n        // _transferFrom(msg.sender, to, value);\\r\\n        if (to != address(0)) {\\r\\n            // Transfer\\r\\n            uint256 balance = balanceOf[msg.sender];\\r\\n            require(balance >= value, \\\"WETH: transfer amount exceeds balance\\\");\\r\\n\\r\\n            balanceOf[msg.sender] = balance - value;\\r\\n            balanceOf[to] += value;\\r\\n            emit Transfer(msg.sender, to, value);\\r\\n        } else {\\r\\n            // Withdraw\\r\\n            uint256 balance = balanceOf[msg.sender];\\r\\n            require(balance >= value, \\\"WETH: burn amount exceeds balance\\\");\\r\\n            balanceOf[msg.sender] = balance - value;\\r\\n            emit Transfer(msg.sender, address(0), value);\\r\\n\\r\\n            (bool success, ) = msg.sender.call{value: value}(\\\"\\\");\\r\\n            require(success, \\\"WETH: ETH transfer failed\\\");\\r\\n        }\\r\\n\\r\\n        return ITransferReceiver(to).onTokenTransfer(msg.sender, value, data);\\r\\n    }\\r\\n}\\r\\n\",\"keccak256\":\"0xc3392613aec5886539569910cfb46548b6e421ae27bf2a6c4deb52f59edc1fcb\",\"license\":\"GPL-3.0-or-later\"},\"contracts/interfaces/IERC20.sol\":{\"content\":\"// SPDX-License-Identifier: GPL-3.0-or-later\\r\\n\\r\\npragma solidity ^0.8.20;\\r\\n\\r\\ninterface IERC20 {\\r\\n    /**\\r\\n     * @dev Returns the amount of tokens in existence.\\r\\n     */\\r\\n    function totalSupply() external view returns (uint256);\\r\\n\\r\\n    /**\\r\\n     * @dev Returns the token decimals.\\r\\n     */\\r\\n    function decimals() external view returns (uint8);\\r\\n\\r\\n    /**\\r\\n     * @dev Returns the token symbol.\\r\\n     */\\r\\n    function symbol() external view returns (string memory);\\r\\n\\r\\n    /**\\r\\n     * @dev Returns the token name.\\r\\n     */\\r\\n    function name() external view returns (string memory);\\r\\n\\r\\n    /**\\r\\n     * @dev Returns the bep token owner.\\r\\n     */\\r\\n    function getOwner() external view returns (address);\\r\\n\\r\\n    /**\\r\\n     * @dev Returns the amount of tokens owned by `account`.\\r\\n     */\\r\\n    function balanceOf(address account) external view returns (uint256);\\r\\n\\r\\n    /**\\r\\n     * @dev Moves `amount` tokens from the caller's account to `recipient`.\\r\\n     *\\r\\n     * Returns a boolean value indicating whether the operation succeeded.\\r\\n     *\\r\\n     * Emits a {Transfer} event.\\r\\n     */\\r\\n    function transfer(\\r\\n        address recipient,\\r\\n        uint256 amount\\r\\n    ) external returns (bool);\\r\\n\\r\\n    /**\\r\\n     * @dev Returns the remaining number of tokens that `spender` will be\\r\\n     * allowed to spend on behalf of `owner` through {transferFrom}. This is\\r\\n     * zero by default.\\r\\n     *\\r\\n     * This value changes when {approve} or {transferFrom} are called.\\r\\n     */\\r\\n    function allowance(\\r\\n        address _owner,\\r\\n        address spender\\r\\n    ) external view returns (uint256);\\r\\n\\r\\n    /**\\r\\n     * @dev Sets `amount` as the allowance of `spender` over the caller's tokens.\\r\\n     *\\r\\n     * Returns a boolean value indicating whether the operation succeeded.\\r\\n     *\\r\\n     * IMPORTANT: Beware that changing an allowance with this method brings the risk\\r\\n     * that someone may use both the old and the new allowance by unfortunate\\r\\n     * transaction ordering. One possible solution to mitigate this race\\r\\n     * condition is to first reduce the spender's allowance to 0 and set the\\r\\n     * desired value afterwards:\\r\\n     * https://github.com/ethereum/EIPs/issues/20#issuecomment-263524729\\r\\n     *\\r\\n     * Emits an {Approval} event.\\r\\n     */\\r\\n    function approve(address spender, uint256 amount) external returns (bool);\\r\\n\\r\\n    /**\\r\\n     * @dev Moves `amount` tokens from `sender` to `recipient` using the\\r\\n     * allowance mechanism. `amount` is then deducted from the caller's\\r\\n     * allowance.\\r\\n     *\\r\\n     * Returns a boolean value indicating whether the operation succeeded.\\r\\n     *\\r\\n     * Emits a {Transfer} event.\\r\\n     */\\r\\n    function transferFrom(\\r\\n        address sender,\\r\\n        address recipient,\\r\\n        uint256 amount\\r\\n    ) external returns (bool);\\r\\n\\r\\n    /**\\r\\n     * @dev Emitted when `value` tokens are moved from one account (`from`) to\\r\\n     * another (`to`).\\r\\n     *\\r\\n     * Note that `value` may be zero.\\r\\n     */\\r\\n    event Transfer(address indexed from, address indexed to, uint256 value);\\r\\n\\r\\n    /**\\r\\n     * @dev Emitted when the allowance of a `spender` for an `owner` is set by\\r\\n     * a call to {approve}. `value` is the new allowance.\\r\\n     */\\r\\n    event Approval(\\r\\n        address indexed owner,\\r\\n        address indexed spender,\\r\\n        uint256 value\\r\\n    );\\r\\n}\\r\\n\\r\\n/**\\r\\n * @dev Interface of the ERC2612 standard as defined in the EIP.\\r\\n *\\r\\n * Adds the {permit} method, which can be used to change one's\\r\\n * {IERC20-allowance} without having to send a transaction, by signing a\\r\\n * message. This allows users to spend tokens without having to hold Ether.\\r\\n *\\r\\n * See https://eips.ethereum.org/EIPS/eip-2612.\\r\\n */\\r\\ninterface IERC2612 {\\r\\n    /**\\r\\n     * @dev Sets `value` as the allowance of `spender` over `owner`'s tokens,\\r\\n     * given `owner`'s signed approval.\\r\\n     *\\r\\n     * IMPORTANT: The same issues {IERC20-approve} has related to transaction\\r\\n     * ordering also apply here.\\r\\n     *\\r\\n     * Emits an {Approval} event.\\r\\n     *\\r\\n     * Requirements:\\r\\n     *\\r\\n     * - `owner` cannot be `address(0)`.\\r\\n     * - `spender` cannot be `address(0)`.\\r\\n     * - `deadline` must be a timestamp in the future.\\r\\n     * - `v`, `r` and `s` must be a valid `secp256k1` signature from `owner`\\r\\n     * over the EIP712-formatted function arguments.\\r\\n     * - the signature must use `owner`'s current nonce (see {nonces}).\\r\\n     *\\r\\n     * For more information on the signature format, see the\\r\\n     * https://eips.ethereum.org/EIPS/eip-2612#specification[relevant EIP\\r\\n     * section].\\r\\n     */\\r\\n    function permit(\\r\\n        address owner,\\r\\n        address spender,\\r\\n        uint256 value,\\r\\n        uint256 deadline,\\r\\n        uint8 v,\\r\\n        bytes32 r,\\r\\n        bytes32 s\\r\\n    ) external;\\r\\n\\r\\n    /**\\r\\n     * @dev Returns the current ERC2612 nonce for `owner`. This value must be\\r\\n     * included whenever a signature is generated for {permit}.\\r\\n     *\\r\\n     * Every successful call to {permit} increases `owner`'s nonce by one. This\\r\\n     * prevents a signature from being used multiple times.\\r\\n     */\\r\\n    function nonces(address owner) external view returns (uint256);\\r\\n\\r\\n    /**\\r\\n     * @dev Returns the domain separator used in the encoding of the signature for {permit}, as defined by EIP712.\\r\\n     */\\r\\n    function DOMAIN_SEPARATOR() external view returns (bytes32);\\r\\n}\\r\\n\",\"keccak256\":\"0xaf31bdf94ac918a628931ca85aca27f394dc2bce57038d213f8b6eeca1972c03\",\"license\":\"GPL-3.0-or-later\"},\"contracts/interfaces/IERC667.sol\":{\"content\":\"// SPDX-License-Identifier: GPL-3.0-or-later\\n\\npragma solidity ^0.8.20;\\n\\ninterface ITransferReceiver {\\n    function onTokenTransfer(\\n        address,\\n        uint,\\n        bytes calldata\\n    ) external returns (bool);\\n}\\n\\ninterface IApprovalReceiver {\\n    function onTokenApproval(\\n        address,\\n        uint,\\n        bytes calldata\\n    ) external returns (bool);\\n}\\n\",\"keccak256\":\"0x2df9d2e3578ecc72445346bcc1fa34ae0692d05c42373ea0e0b6748a73120256\",\"license\":\"GPL-3.0-or-later\"},\"contracts/interfaces/IWETH.sol\":{\"content\":\"// SPDX-License-Identifier: GPL-3.0-or-later\\r\\n// Copyright (C) 2015, 2016, 2017 Dapphub\\r\\n// Adapted by Ethereum Community 2021\\r\\npragma solidity ^0.8.22;\\r\\n\\r\\nimport {IERC20, IERC2612} from \\\"./IERC20.sol\\\";\\r\\n\\r\\ninterface IERC3156FlashBorrower {\\r\\n    /**\\r\\n     * @dev Receive a flash loan.\\r\\n     * @param initiator The initiator of the loan.\\r\\n     * @param token The loan currency.\\r\\n     * @param amount The amount of tokens lent.\\r\\n     * @param fee The additional amount of tokens to repay.\\r\\n     * @param data Arbitrary data structure, intended to contain user-defined parameters.\\r\\n     * @return The keccak256 hash of \\\"ERC3156FlashBorrower.onFlashLoan\\\"\\r\\n     */\\r\\n    function onFlashLoan(\\r\\n        address initiator,\\r\\n        address token,\\r\\n        uint256 amount,\\r\\n        uint256 fee,\\r\\n        bytes calldata data\\r\\n    ) external returns (bytes32);\\r\\n}\\r\\n\\r\\ninterface IERC3156FlashLender {\\r\\n    /**\\r\\n     * @dev The amount of currency available to be lended.\\r\\n     * @param token The loan currency.\\r\\n     * @return The amount of `token` that can be borrowed.\\r\\n     */\\r\\n    function maxFlashLoan(address token) external view returns (uint256);\\r\\n\\r\\n    /**\\r\\n     * @dev The fee to be charged for a given loan.\\r\\n     * @param token The loan currency.\\r\\n     * @param amount The amount of tokens lent.\\r\\n     * @return The amount of `token` to be charged for the loan, on top of the returned principal.\\r\\n     */\\r\\n    function flashFee(\\r\\n        address token,\\r\\n        uint256 amount\\r\\n    ) external view returns (uint256);\\r\\n\\r\\n    /**\\r\\n     * @dev Initiate a flash loan.\\r\\n     * @param receiver The receiver of the tokens in the loan, and the receiver of the callback.\\r\\n     * @param token The loan currency.\\r\\n     * @param amount The amount of tokens lent.\\r\\n     * @param data Arbitrary data structure, intended to contain user-defined parameters.\\r\\n     */\\r\\n    function flashLoan(\\r\\n        IERC3156FlashBorrower receiver,\\r\\n        address token,\\r\\n        uint256 amount,\\r\\n        bytes calldata data\\r\\n    ) external returns (bool);\\r\\n}\\r\\n\\r\\n/// @dev Wrapped ETH v10 (WETH10) is an ETH (ETH) ERC-20 wrapper. You can `deposit` ETH and obtain a WETH10 balance which can then be operated as an ERC-20 token. You can\\r\\n/// `withdraw` ETH from WETH10, which will then burn WETH10 token in your wallet. The amount of WETH10 token in any wallet is always identical to the\\r\\n/// balance of ETH deposited minus the ETH withdrawn with that specific wallet.\\r\\ninterface IWETH10 is IERC20, IERC2612, IERC3156FlashLender {\\r\\n    /// @dev Returns current amount of flash-minted WETH10 token.\\r\\n    function flashMinted() external view returns (uint256);\\r\\n\\r\\n    /// @dev `msg.value` of ETH sent to this contract grants caller account a matching increase in WETH10 token balance.\\r\\n    /// Emits {Transfer} event to reflect WETH10 token mint of `msg.value` from `address(0)` to caller account.\\r\\n    function deposit() external payable;\\r\\n\\r\\n    /// @dev `msg.value` of ETH sent to this contract grants `to` account a matching increase in WETH10 token balance.\\r\\n    /// Emits {Transfer} event to reflect WETH10 token mint of `msg.value` from `address(0)` to `to` account.\\r\\n    function depositTo(address to) external payable;\\r\\n\\r\\n    /// @dev Burn `value` WETH10 token from caller account and withdraw matching ETH to the same.\\r\\n    /// Emits {Transfer} event to reflect WETH10 token burn of `value` to `address(0)` from caller account.\\r\\n    /// Requirements:\\r\\n    ///   - caller account must have at least `value` balance of WETH10 token.\\r\\n    function withdraw(uint256 value) external;\\r\\n\\r\\n    /// @dev Burn `value` WETH10 token from caller account and withdraw matching ETH to account (`to`).\\r\\n    /// Emits {Transfer} event to reflect WETH10 token burn of `value` to `address(0)` from caller account.\\r\\n    /// Requirements:\\r\\n    ///   - caller account must have at least `value` balance of WETH10 token.\\r\\n    function withdrawTo(address payable to, uint256 value) external;\\r\\n\\r\\n    /// @dev Burn `value` WETH10 token from account (`from`) and withdraw matching ETH to account (`to`).\\r\\n    /// Emits {Approval} event to reflect reduced allowance `value` for caller account to spend from account (`from`),\\r\\n    /// unless allowance is set to `type(uint256).max`\\r\\n    /// Emits {Transfer} event to reflect WETH10 token burn of `value` to `address(0)` from account (`from`).\\r\\n    /// Requirements:\\r\\n    ///   - `from` account must have at least `value` balance of WETH10 token.\\r\\n    ///   - `from` account must have approved caller to spend at least `value` of WETH10 token, unless `from` and caller are the same account.\\r\\n    function withdrawFrom(\\r\\n        address from,\\r\\n        address payable to,\\r\\n        uint256 value\\r\\n    ) external;\\r\\n\\r\\n    /// @dev `msg.value` of ETH sent to this contract grants `to` account a matching increase in WETH10 token balance,\\r\\n    /// after which a call is executed to an ERC677-compliant contract with the `data` parameter.\\r\\n    /// Emits {Transfer} event.\\r\\n    /// Returns boolean value indicating whether operation succeeded.\\r\\n    /// For more information on {transferAndCall} format, see https://github.com/ethereum/EIPs/issues/677.\\r\\n    function depositToAndCall(\\r\\n        address to,\\r\\n        bytes calldata data\\r\\n    ) external payable returns (bool);\\r\\n\\r\\n    /// @dev Sets `value` as allowance of `spender` account over caller account's WETH10 token,\\r\\n    /// after which a call is executed to an ERC677-compliant contract with the `data` parameter.\\r\\n    /// Emits {Approval} event.\\r\\n    /// Returns boolean value indicating whether operation succeeded.\\r\\n    /// For more information on {approveAndCall} format, see https://github.com/ethereum/EIPs/issues/677.\\r\\n    function approveAndCall(\\r\\n        address spender,\\r\\n        uint256 value,\\r\\n        bytes calldata data\\r\\n    ) external returns (bool);\\r\\n\\r\\n    /// @dev Moves `value` WETH10 token from caller's account to account (`to`),\\r\\n    /// after which a call is executed to an ERC677-compliant contract with the `data` parameter.\\r\\n    /// A transfer to `address(0)` triggers an ETH withdraw matching the sent WETH10 token in favor of caller.\\r\\n    /// Emits {Transfer} event.\\r\\n    /// Returns boolean value indicating whether operation succeeded.\\r\\n    /// Requirements:\\r\\n    ///   - caller account must have at least `value` WETH10 token.\\r\\n    /// For more information on {transferAndCall} format, see https://github.com/ethereum/EIPs/issues/677.\\r\\n    function transferAndCall(\\r\\n        address to,\\r\\n        uint value,\\r\\n        bytes calldata data\\r\\n    ) external returns (bool);\\r\\n}\\r\\n\",\"keccak256\":\"0x57213fc80ebcaf690871388d8175ab8a816bc7043815651c20fb0a36b83c4064\",\"license\":\"GPL-3.0-or-later\"},\"contracts/libraries/MerkleProof.sol\":{\"content\":\"// SPDX-License-Identifier: MIT\\n// OpenZeppelin Contracts (last updated v4.9.2) (utils/cryptography/MerkleProof.sol)\\n\\npragma solidity ^0.8.22;\\n\\n/**\\n * @dev These functions deal with verification of Merkle Tree proofs.\\n *\\n * The tree and the proofs can be generated using our\\n * https://github.com/merkle-tree[JavaScript library].\\n * You will find a quickstart guide in the readme.\\n *\\n * WARNING: You should avoid using leaf values that are 64 bytes long prior to\\n * hashing, or use a hash function other than keccak256 for hashing leaves.\\n * This is because the concatenation of a sorted pair of internal nodes in\\n * the merkle tree could be reinterpreted as a leaf value.\\n * OpenZeppelin's JavaScript library generates merkle trees that are safe\\n * against this attack out of the box.\\n */\\nlibrary MerkleProof {\\n    /**\\n     *@dev The multiproof provided is not valid.\\n     */\\n    error MerkleProofInvalidMultiproof();\\n\\n    /**\\n     * @dev Returns true if a `leaf` can be proved to be a part of a Merkle tree\\n     * defined by `root`. For this, a `proof` must be provided, containing\\n     * sibling hashes on the branch from the leaf to the root of the tree. Each\\n     * pair of leaves and each pair of pre-images are assumed to be sorted.\\n     */\\n    function verify(\\n        bytes32[] memory proof,\\n        bytes32 root,\\n        bytes32 leaf\\n    ) internal pure returns (bool) {\\n        return processProof(proof, leaf) == root;\\n    }\\n\\n    /**\\n     * @dev Calldata version of {verify}\\n     */\\n    function verifyCalldata(\\n        bytes32[] calldata proof,\\n        bytes32 root,\\n        bytes32 leaf\\n    ) internal pure returns (bool) {\\n        return processProofCalldata(proof, leaf) == root;\\n    }\\n\\n    /**\\n     * @dev Returns the rebuilt hash obtained by traversing a Merkle tree up\\n     * from `leaf` using `proof`. A `proof` is valid if and only if the rebuilt\\n     * hash matches the root of the tree. When processing the proof, the pairs\\n     * of leafs & pre-images are assumed to be sorted.\\n     */\\n    function processProof(\\n        bytes32[] memory proof,\\n        bytes32 leaf\\n    ) internal pure returns (bytes32) {\\n        bytes32 computedHash = leaf;\\n        for (uint256 i = 0; i < proof.length; i++) {\\n            computedHash = _hashPair(computedHash, proof[i]);\\n        }\\n        return computedHash;\\n    }\\n\\n    /**\\n     * @dev Calldata version of {processProof}\\n     */\\n    function processProofCalldata(\\n        bytes32[] calldata proof,\\n        bytes32 leaf\\n    ) internal pure returns (bytes32) {\\n        bytes32 computedHash = leaf;\\n        for (uint256 i = 0; i < proof.length; i++) {\\n            computedHash = _hashPair(computedHash, proof[i]);\\n        }\\n        return computedHash;\\n    }\\n\\n    /**\\n     * @dev Returns true if the `leaves` can be simultaneously proven to be a part of a merkle tree defined by\\n     * `root`, according to `proof` and `proofFlags` as described in {processMultiProof}.\\n     *\\n     * CAUTION: Not all merkle trees admit multiproofs. See {processMultiProof} for details.\\n     */\\n    function multiProofVerify(\\n        bytes32[] memory proof,\\n        bool[] memory proofFlags,\\n        bytes32 root,\\n        bytes32[] memory leaves\\n    ) internal pure returns (bool) {\\n        return processMultiProof(proof, proofFlags, leaves) == root;\\n    }\\n\\n    /**\\n     * @dev Calldata version of {multiProofVerify}\\n     *\\n     * CAUTION: Not all merkle trees admit multiproofs. See {processMultiProof} for details.\\n     */\\n    function multiProofVerifyCalldata(\\n        bytes32[] calldata proof,\\n        bool[] calldata proofFlags,\\n        bytes32 root,\\n        bytes32[] memory leaves\\n    ) internal pure returns (bool) {\\n        return processMultiProofCalldata(proof, proofFlags, leaves) == root;\\n    }\\n\\n    /**\\n     * @dev Returns the root of a tree reconstructed from `leaves` and sibling nodes in `proof`. The reconstruction\\n     * proceeds by incrementally reconstructing all inner nodes by combining a leaf/inner node with either another\\n     * leaf/inner node or a proof sibling node, depending on whether each `proofFlags` item is true or false\\n     * respectively.\\n     *\\n     * CAUTION: Not all merkle trees admit multiproofs. To use multiproofs, it is sufficient to ensure that: 1) the tree\\n     * is complete (but not necessarily perfect), 2) the leaves to be proven are in the opposite order they are in the\\n     * tree (i.e., as seen from right to left starting at the deepest layer and continuing at the next layer).\\n     */\\n    function processMultiProof(\\n        bytes32[] memory proof,\\n        bool[] memory proofFlags,\\n        bytes32[] memory leaves\\n    ) internal pure returns (bytes32 merkleRoot) {\\n        // This function rebuilds the root hash by traversing the tree up from the leaves. The root is rebuilt by\\n        // consuming and producing values on a queue. The queue starts with the `leaves` array, then goes onto the\\n        // `hashes` array. At the end of the process, the last hash in the `hashes` array should contain the root of\\n        // the merkle tree.\\n        uint256 leavesLen = leaves.length;\\n        uint256 proofLen = proof.length;\\n        uint256 totalHashes = proofFlags.length;\\n\\n        // Check proof validity.\\n        if (leavesLen + proofLen - 1 != totalHashes) {\\n            revert MerkleProofInvalidMultiproof();\\n        }\\n\\n        // The xxxPos values are \\\"pointers\\\" to the next value to consume in each array. All accesses are done using\\n        // `xxx[xxxPos++]`, which return the current value and increment the pointer, thus mimicking a queue's \\\"pop\\\".\\n        bytes32[] memory hashes = new bytes32[](totalHashes);\\n        uint256 leafPos = 0;\\n        uint256 hashPos = 0;\\n        uint256 proofPos = 0;\\n        // At each step, we compute the next hash using two values:\\n        // - a value from the \\\"main queue\\\". If not all leaves have been consumed, we get the next leaf, otherwise we\\n        //   get the next hash.\\n        // - depending on the flag, either another value from the \\\"main queue\\\" (merging branches) or an element from the\\n        //   `proof` array.\\n        for (uint256 i = 0; i < totalHashes; i++) {\\n            bytes32 a = leafPos < leavesLen\\n                ? leaves[leafPos++]\\n                : hashes[hashPos++];\\n            bytes32 b = proofFlags[i]\\n                ? (leafPos < leavesLen ? leaves[leafPos++] : hashes[hashPos++])\\n                : proof[proofPos++];\\n            hashes[i] = _hashPair(a, b);\\n        }\\n\\n        if (totalHashes > 0) {\\n            if (proofPos != proofLen) {\\n                revert MerkleProofInvalidMultiproof();\\n            }\\n            unchecked {\\n                return hashes[totalHashes - 1];\\n            }\\n        } else if (leavesLen > 0) {\\n            return leaves[0];\\n        } else {\\n            return proof[0];\\n        }\\n    }\\n\\n    /**\\n     * @dev Calldata version of {processMultiProof}.\\n     *\\n     * CAUTION: Not all merkle trees admit multiproofs. See {processMultiProof} for details.\\n     */\\n    function processMultiProofCalldata(\\n        bytes32[] calldata proof,\\n        bool[] calldata proofFlags,\\n        bytes32[] memory leaves\\n    ) internal pure returns (bytes32 merkleRoot) {\\n        // This function rebuilds the root hash by traversing the tree up from the leaves. The root is rebuilt by\\n        // consuming and producing values on a queue. The queue starts with the `leaves` array, then goes onto the\\n        // `hashes` array. At the end of the process, the last hash in the `hashes` array should contain the root of\\n        // the merkle tree.\\n        uint256 leavesLen = leaves.length;\\n        uint256 proofLen = proof.length;\\n        uint256 totalHashes = proofFlags.length;\\n\\n        // Check proof validity.\\n        if (leavesLen + proofLen - 1 != totalHashes) {\\n            revert MerkleProofInvalidMultiproof();\\n        }\\n\\n        // The xxxPos values are \\\"pointers\\\" to the next value to consume in each array. All accesses are done using\\n        // `xxx[xxxPos++]`, which return the current value and increment the pointer, thus mimicking a queue's \\\"pop\\\".\\n        bytes32[] memory hashes = new bytes32[](totalHashes);\\n        uint256 leafPos = 0;\\n        uint256 hashPos = 0;\\n        uint256 proofPos = 0;\\n        // At each step, we compute the next hash using two values:\\n        // - a value from the \\\"main queue\\\". If not all leaves have been consumed, we get the next leaf, otherwise we\\n        //   get the next hash.\\n        // - depending on the flag, either another value from the \\\"main queue\\\" (merging branches) or an element from the\\n        //   `proof` array.\\n        for (uint256 i = 0; i < totalHashes; i++) {\\n            bytes32 a = leafPos < leavesLen\\n                ? leaves[leafPos++]\\n                : hashes[hashPos++];\\n            bytes32 b = proofFlags[i]\\n                ? (leafPos < leavesLen ? leaves[leafPos++] : hashes[hashPos++])\\n                : proof[proofPos++];\\n            hashes[i] = _hashPair(a, b);\\n        }\\n\\n        if (totalHashes > 0) {\\n            if (proofPos != proofLen) {\\n                revert MerkleProofInvalidMultiproof();\\n            }\\n            unchecked {\\n                return hashes[totalHashes - 1];\\n            }\\n        } else if (leavesLen > 0) {\\n            return leaves[0];\\n        } else {\\n            return proof[0];\\n        }\\n    }\\n\\n    function _hashPair(bytes32 a, bytes32 b) private pure returns (bytes32) {\\n        return a < b ? _efficientHash(a, b) : _efficientHash(b, a);\\n    }\\n\\n    function _efficientHash(\\n        bytes32 a,\\n        bytes32 b\\n    ) private pure returns (bytes32 value) {\\n        /// @solidity memory-safe-assembly\\n        assembly {\\n            mstore(0x00, a)\\n            mstore(0x20, b)\\n            value := keccak256(0x00, 0x40)\\n        }\\n    }\\n}\\n\",\"keccak256\":\"0xe9b2792f78ed6c55fc5450172d3d174795cdd0e1a55275ebe3ed3ee226dc7145\",\"license\":\"MIT\"}},\"version\":1}",
+  "bytecode": "0x6101006040527f439148f0bbc682ca079e46d6e2c2f0c1e3b820f1a291b069d8882abf8cf18dd96080527f6e71edae12b1b97f4d1f60370fef10105fa2faae0126114a169c64845d6126c960a05234801561005957600080fd5b50604051620029983803806200299883398101604081905261007a91610159565b4660c0818152604080518082018252600b81526a0aee4c2e0e0cac8408aa8960ab1b6020918201528151808301835260018152603160f81b9082015281517f8b73c3c69bb8fe3d512ecc4cf759cc79239f7b179b0ffacaa9a75d522b39400f818301527f874c41dabf247f58cf7402101699de56f30fb80977de4a84bad0706e4619ebd7818401527fc89efdaa54c0f20c7adf612882df0950f5a951637e0307cdcb4c672f298b8bc66060820152608081018590523060a080830191909152835180830390910181529301909152815191012060e05250600055610172565b60006020828403121561016b57600080fd5b5051919050565b60805160a05160c05160e0516127c9620001cf60003960008181610d0a0152611eee01526000818161058801528181610cd50152611eb901526000818161039f0152611e31015260008181610480015261141101526127c96000f3fe6080604052600436106101c65760003560e01c806370a08231116100f7578063a9059cbb11610095578063d0e30db011610064578063d0e30db0146105aa578063d505accf146105b2578063d9d98ce4146105d2578063dd62ed3e146105f257600080fd5b8063a9059cbb14610523578063b760faf914610543578063cae9ca5114610556578063cd0d00961461057657600080fd5b8063893d20e8116100d1578063893d20e8146104a25780638b28d32f146104bd5780639555a942146104d357806395d89b41146104f357600080fd5b806370a08231146104145780637ecebe00146104415780638237e5381461046e57600080fd5b80633644e515116101645780634d4bb1971161013e5780634d4bb1971461038d5780635cffe9de146103c15780635ddb7d7e146103e1578063613255ab146103f457600080fd5b80633644e515146103455780633bbb39b91461035a5780634000aea01461036d57600080fd5b8063205c2878116101a0578063205c2878146102bc57806323b872dd146102de5780632e1a7d4d146102fe578063313ce5671461031e57600080fd5b806306fdde031461021c578063095ea7b31461026957806318160ddd1461029957600080fd5b366102175733600090815260016020526040812080543492906101ea90849061225c565b9091555050604051348152339060009060008051602061279d8339815191529060200160405180910390a3005b600080fd5b34801561022857600080fd5b506102536040518060400160405280600b81526020016a0aee4c2e0e0cac8408aa8960ab1b81525081565b604051610260919061226f565b60405180910390f35b34801561027557600080fd5b506102896102843660046122d6565b61062a565b6040519015158152602001610260565b3480156102a557600080fd5b506102ae610697565b604051908152602001610260565b3480156102c857600080fd5b506102dc6102d73660046122d6565b6106ac565b005b3480156102ea57600080fd5b506102896102f9366004612302565b610805565b34801561030a57600080fd5b506102dc610319366004612343565b610b88565b34801561032a57600080fd5b50610333601281565b60405160ff9091168152602001610260565b34801561035157600080fd5b506102ae610cd0565b610289610368366004612372565b610d30565b34801561037957600080fd5b5061028961038836600461248d565b610fb2565b34801561039957600080fd5b506102ae7f000000000000000000000000000000000000000000000000000000000000000081565b3480156103cd57600080fd5b506102896103dc3660046124e9565b61126b565b6102896103ef36600461255c565b6116b9565b34801561040057600080fd5b506102ae61040f3660046125b1565b611794565b34801561042057600080fd5b506102ae61042f3660046125b1565b60016020526000908152604090205481565b34801561044d57600080fd5b506102ae61045c3660046125b1565b60026020526000908152604090205481565b34801561047a57600080fd5b506102ae7f000000000000000000000000000000000000000000000000000000000000000081565b3480156104ae57600080fd5b50604051308152602001610260565b3480156104c957600080fd5b506102ae60045481565b3480156104df57600080fd5b506102dc6104ee366004612302565b6117c8565b3480156104ff57600080fd5b50610253604051806040016040528060048152602001630ae8aa8960e31b81525081565b34801561052f57600080fd5b5061028961053e3660046122d6565b611a29565b6102dc6105513660046125b1565b611c84565b34801561056257600080fd5b5061028961057136600461248d565b611ce3565b34801561058257600080fd5b506102ae7f000000000000000000000000000000000000000000000000000000000000000081565b6102dc611d76565b3480156105be57600080fd5b506102dc6105cd3660046125ce565b611dc2565b3480156105de57600080fd5b506102ae6105ed3660046122d6565b612084565b3480156105fe57600080fd5b506102ae61060d366004612645565b600360209081526000928352604080842090915290825290205481565b3360008181526003602090815260408083206001600160a01b038716808552925280832085905551919290917f8c5be1e5ebec7d5bd14f71427d1e84f3dd0314c0f7b2291e5b200ac8c7c3b925906106859086815260200190565b60405180910390a35060015b92915050565b6000600454476106a7919061225c565b905090565b336000908152600160205260409020548181101561071b5760405162461bcd60e51b815260206004820152602160248201527f574554483a206275726e20616d6f756e7420657863656564732062616c616e636044820152606560f81b60648201526084015b60405180910390fd5b610725828261267e565b3360008181526001602052604080822093909355915160008051602061279d833981519152906107589086815260200190565b60405180910390a36000836001600160a01b03168360405160006040518083038185875af1925050503d80600081146107ad576040519150601f19603f3d011682016040523d82523d6000602084013e6107b2565b606091505b50509050806107ff5760405162461bcd60e51b815260206004820152601960248201527815d155120e88115512081d1c985b9cd9995c8819985a5b1959603a1b6044820152606401610712565b50505050565b60006001600160a01b0384163314610901576001600160a01b038416600090815260036020908152604080832033845290915290205460001981146108ff57828110156108945760405162461bcd60e51b815260206004820152601f60248201527f574554483a2072657175657374206578636565647320616c6c6f77616e6365006044820152606401610712565b60006108a0848361267e565b6001600160a01b038716600081815260036020908152604080832033808552908352928190208590555184815293945090927f8c5be1e5ebec7d5bd14f71427d1e84f3dd0314c0f7b2291e5b200ac8c7c3b925910160405180910390a3505b505b6001600160a01b0383161580159061092257506001600160a01b0383163014155b15610a26576001600160a01b0384166000908152600160205260409020548281101561099e5760405162461bcd60e51b815260206004820152602560248201527f574554483a207472616e7366657220616d6f756e7420657863656564732062616044820152646c616e636560d81b6064820152608401610712565b6109a8838261267e565b6001600160a01b0380871660009081526001602052604080822093909355908616815290812080548592906109de90849061225c565b92505081905550836001600160a01b0316856001600160a01b031660008051602061279d83398151915285604051610a1891815260200190565b60405180910390a350610b7e565b6001600160a01b03841660009081526001602052604090205482811015610a995760405162461bcd60e51b815260206004820152602160248201527f574554483a206275726e20616d6f756e7420657863656564732062616c616e636044820152606560f81b6064820152608401610712565b610aa3838261267e565b6001600160a01b03861660008181526001602052604080822093909355915160008051602061279d83398151915290610adf9087815260200190565b60405180910390a3604051600090339085908381818185875af1925050503d8060008114610b29576040519150601f19603f3d011682016040523d82523d6000602084013e610b2e565b606091505b5050905080610b7b5760405162461bcd60e51b815260206004820152601960248201527815d155120e88115512081d1c985b9cd9995c8819985a5b1959603a1b6044820152606401610712565b50505b5060019392505050565b3360009081526001602052604090205481811015610bf25760405162461bcd60e51b815260206004820152602160248201527f574554483a206275726e20616d6f756e7420657863656564732062616c616e636044820152606560f81b6064820152608401610712565b610bfc828261267e565b3360008181526001602052604080822093909355915160008051602061279d83398151915290610c2f9086815260200190565b60405180910390a3604051600090339084908381818185875af1925050503d8060008114610c79576040519150601f19603f3d011682016040523d82523d6000602084013e610c7e565b606091505b5050905080610ccb5760405162461bcd60e51b815260206004820152601960248201527815d155120e88115512081d1c985b9cd9995c8819985a5b1959603a1b6044820152606401610712565b505050565b6000467f00000000000000000000000000000000000000000000000000000000000000008114610d0857610d03816120e7565b610d2a565b7f00000000000000000000000000000000000000000000000000000000000000005b91505090565b60408051336020820181905291810183905260009184918490849060600160408051601f1981840301815282825280516020918201209083015201604051602081830303815290604052805190602001209050610d9084600054836121bb565b610ddc5760405162461bcd60e51b815260206004820152600d60248201527f496e76616c69642070726f6f66000000000000000000000000000000000000006044820152606401610712565b85158015610de8575087155b15610ee15760004790508060046000828254610e04919061225c565b9091555050604051600090339083908381818185875af1925050503d8060008114610e4b576040519150601f19603f3d011682016040523d82523d6000602084013e610e50565b606091505b5050905080610e9d5760405162461bcd60e51b815260206004820152601960248201527815d155120e88115512081d1c985b9cd9995c8819985a5b1959603a1b6044820152606401610712565b60408051338152602081018490527fa11f75c4ce1a7e4454fcafbb9c55aede8e13c42fe398fce1a6c4a33a3eef3937910160405180910390a1600196505050610fa7565b3360009081526001602052604081208054889290610f0090849061225c565b925050819055508560046000828254610f19919061225c565b909155505060408051338152602081018890527fc3caee33dbf056df0435b8fa2f461dfb773ccb19c7075129bdf3689c0400f07a910160405180910390a185158015610f6457508715155b15610fa25760008890556040518881527fbf015c4840112f1a2d3c022599936c555d0c9303e7213eb1709bac4f1d8c295a9060200160405180910390a15b600094505b505050509392505050565b60006001600160a01b038516156110a75733600090815260016020526040902054848110156110315760405162461bcd60e51b815260206004820152602560248201527f574554483a207472616e7366657220616d6f756e7420657863656564732062616044820152646c616e636560d81b6064820152608401610712565b61103b858261267e565b33600090815260016020526040808220929092556001600160a01b0388168152908120805487929061106e90849061225c565b90915550506040518581526001600160a01b03871690339060008051602061279d8339815191529060200160405180910390a3506111ed565b33600090815260016020526040902054848110156111115760405162461bcd60e51b815260206004820152602160248201527f574554483a206275726e20616d6f756e7420657863656564732062616c616e636044820152606560f81b6064820152608401610712565b61111b858261267e565b3360008181526001602052604080822093909355915160008051602061279d8339815191529061114e9089815260200190565b60405180910390a3604051600090339087908381818185875af1925050503d8060008114611198576040519150601f19603f3d011682016040523d82523d6000602084013e61119d565b606091505b50509050806111ea5760405162461bcd60e51b815260206004820152601960248201527815d155120e88115512081d1c985b9cd9995c8819985a5b1959603a1b6044820152606401610712565b50505b604051635260769b60e11b81526001600160a01b0386169063a4c0ed369061121f9033908890889088906004016126ba565b6020604051808303816000875af115801561123e573d6000803e3d6000fd5b505050506040513d601f19601f8201168201806040525081019061126291906126ed565b95945050505050565b60006001600160a01b03851630146112c55760405162461bcd60e51b815260206004820152601c60248201527f574554483a20666c617368206d696e74206f6e6c7920574554483130000000006044820152606401610712565b6dffffffffffffffffffffffffffff84111561132f5760405162461bcd60e51b8152602060048201526024808201527f574554483a20696e646976696475616c206c6f616e206c696d697420657863656044820152631959195960e21b6064820152608401610712565b8360046000828254611341919061225c565b90915550506004546dffffffffffffffffffffffffffff10156113a65760405162461bcd60e51b815260206004820152601f60248201527f574554483a20746f74616c206c6f616e206c696d6974206578636565646564006044820152606401610712565b6001600160a01b038616600090815260016020526040812080548692906113ce90849061225c565b90915550506040518481526001600160a01b0387169060009060008051602061279d8339815191529060200160405180910390a36040516323e30c8b60e01b81527f0000000000000000000000000000000000000000000000000000000000000000906001600160a01b038816906323e30c8b9061145b90339030908a906000908b908b9060040161270f565b6020604051808303816000875af115801561147a573d6000803e3d6000fd5b505050506040513d601f19601f8201168201806040525081019061149e9190612754565b146114eb5760405162461bcd60e51b815260206004820152601760248201527f574554483a20666c617368206c6f616e206661696c65640000000000000000006044820152606401610712565b6001600160a01b038616600090815260036020908152604080832030845290915290205460001981146115d357848110156115685760405162461bcd60e51b815260206004820152601f60248201527f574554483a2072657175657374206578636565647320616c6c6f77616e6365006044820152606401610712565b6000611574868361267e565b6001600160a01b038916600081815260036020908152604080832030808552908352928190208590555184815293945090927f8c5be1e5ebec7d5bd14f71427d1e84f3dd0314c0f7b2291e5b200ac8c7c3b925910160405180910390a3505b6001600160a01b038716600090815260016020526040902054858110156116465760405162461bcd60e51b815260206004820152602160248201527f574554483a206275726e20616d6f756e7420657863656564732062616c616e636044820152606560f81b6064820152608401610712565b611650868261267e565b6001600160a01b03891660008181526001602052604080822093909355915160008051602061279d8339815191529061168c908a815260200190565b60405180910390a385600460008282546116a6919061267e565b9091555060019998505050505050505050565b6001600160a01b0383166000908152600160205260408120805434919083906116e390849061225c565b90915550506040513481526001600160a01b0385169060009060008051602061279d8339815191529060200160405180910390a3604051635260769b60e11b81526001600160a01b0385169063a4c0ed36906117499033903490889088906004016126ba565b6020604051808303816000875af1158015611768573d6000803e3d6000fd5b505050506040513d601f19601f8201168201806040525081019061178c91906126ed565b949350505050565b60006001600160a01b03821630146117ad576000610691565b600454610691906dffffffffffffffffffffffffffff61267e565b6001600160a01b03831633146118c2576001600160a01b038316600090815260036020908152604080832033845290915290205460001981146118c057818110156118555760405162461bcd60e51b815260206004820152601f60248201527f574554483a2072657175657374206578636565647320616c6c6f77616e6365006044820152606401610712565b6000611861838361267e565b6001600160a01b038616600081815260036020908152604080832033808552908352928190208590555184815293945090927f8c5be1e5ebec7d5bd14f71427d1e84f3dd0314c0f7b2291e5b200ac8c7c3b925910160405180910390a3505b505b6001600160a01b038316600090815260016020526040902054818110156119355760405162461bcd60e51b815260206004820152602160248201527f574554483a206275726e20616d6f756e7420657863656564732062616c616e636044820152606560f81b6064820152608401610712565b61193f828261267e565b6001600160a01b03851660008181526001602052604080822093909355915160008051602061279d8339815191529061197b9086815260200190565b60405180910390a36000836001600160a01b03168360405160006040518083038185875af1925050503d80600081146119d0576040519150601f19603f3d011682016040523d82523d6000602084013e6119d5565b606091505b5050905080611a225760405162461bcd60e51b815260206004820152601960248201527815d155120e88115512081d1c985b9cd9995c8819985a5b1959603a1b6044820152606401610712565b5050505050565b60006001600160a01b03831615801590611a4c57506001600160a01b0383163014155b15611b35573360009081526001602052604090205482811015611abf5760405162461bcd60e51b815260206004820152602560248201527f574554483a207472616e7366657220616d6f756e7420657863656564732062616044820152646c616e636560d81b6064820152608401610712565b611ac9838261267e565b33600090815260016020526040808220929092556001600160a01b03861681529081208054859290611afc90849061225c565b90915550506040518381526001600160a01b03851690339060008051602061279d8339815191529060200160405180910390a350611c7b565b3360009081526001602052604090205482811015611b9f5760405162461bcd60e51b815260206004820152602160248201527f574554483a206275726e20616d6f756e7420657863656564732062616c616e636044820152606560f81b6064820152608401610712565b611ba9838261267e565b3360008181526001602052604080822093909355915160008051602061279d83398151915290611bdc9087815260200190565b60405180910390a3604051600090339085908381818185875af1925050503d8060008114611c26576040519150601f19603f3d011682016040523d82523d6000602084013e611c2b565b606091505b5050905080611c785760405162461bcd60e51b815260206004820152601960248201527815d155120e88115512081d1c985b9cd9995c8819985a5b1959603a1b6044820152606401610712565b50505b50600192915050565b6001600160a01b03811660009081526001602052604081208054349290611cac90849061225c565b90915550506040513481526001600160a01b0382169060009060008051602061279d8339815191529060200160405180910390a350565b3360008181526003602090815260408083206001600160a01b038916808552925280832087905551919290917f8c5be1e5ebec7d5bd14f71427d1e84f3dd0314c0f7b2291e5b200ac8c7c3b92590611d3e9088815260200190565b60405180910390a360405162ba451f60e01b81526001600160a01b0386169062ba451f9061121f9033908890889088906004016126ba565b3360009081526001602052604081208054349290611d9590849061225c565b9091555050604051348152339060009060008051602061279d8339815191529060200160405180910390a3565b83421115611e125760405162461bcd60e51b815260206004820152601460248201527f574554483a2045787069726564207065726d69740000000000000000000000006044820152606401610712565b6001600160a01b038716600090815260026020526040812080544692917f0000000000000000000000000000000000000000000000000000000000000000918b918b918b9186611e618361276d565b909155506040805160208101969096526001600160a01b0394851690860152929091166060840152608083015260a082015260c0810187905260e00160405160208183030381529060405280519060200120905060007f00000000000000000000000000000000000000000000000000000000000000008314611eec57611ee7836120e7565b611f0e565b7f00000000000000000000000000000000000000000000000000000000000000005b60405161190160f01b602082015260228101919091526042810183905260620160408051601f198184030181528282528051602091820120600080855291840180845281905260ff8a169284019290925260608301889052608083018790529092509060019060a0016020604051602081039080840390855afa158015611f99573d6000803e3d6000fd5b5050604051601f1901519150506001600160a01b03811615801590611fcf57508a6001600160a01b0316816001600160a01b0316145b61201b5760405162461bcd60e51b815260206004820152601460248201527f574554483a20696e76616c6964207065726d69740000000000000000000000006044820152606401610712565b6001600160a01b038b81166000818152600360209081526040808320948f16808452948252918290208d905590518c81527f8c5be1e5ebec7d5bd14f71427d1e84f3dd0314c0f7b2291e5b200ac8c7c3b925910160405180910390a35050505050505050505050565b60006001600160a01b03831630146120de5760405162461bcd60e51b815260206004820152601c60248201527f574554483a20666c617368206d696e74206f6e6c7920574554483130000000006044820152606401610712565b50600092915050565b604080518082018252600b81526a0aee4c2e0e0cac8408aa8960ab1b6020918201528151808301835260018152603160f81b9082015281517f8b73c3c69bb8fe3d512ecc4cf759cc79239f7b179b0ffacaa9a75d522b39400f818301527f874c41dabf247f58cf7402101699de56f30fb80977de4a84bad0706e4619ebd7818401527fc89efdaa54c0f20c7adf612882df0950f5a951637e0307cdcb4c672f298b8bc6606082015260808101939093523060a0808501919091528251808503909101815260c0909301909152815191012090565b6000826121c885846121d1565b14949350505050565b600081815b845181101561220c57612202828683815181106121f5576121f5612786565b6020026020010151612214565b91506001016121d6565b509392505050565b600081831061223057600082815260208490526040902061223f565b60008381526020839052604090205b9392505050565b634e487b7160e01b600052601160045260246000fd5b8082018082111561069157610691612246565b60006020808352835180602085015260005b8181101561229d57858101830151858201604001528201612281565b506000604082860101526040601f19601f8301168501019250505092915050565b6001600160a01b03811681146122d357600080fd5b50565b600080604083850312156122e957600080fd5b82356122f4816122be565b946020939093013593505050565b60008060006060848603121561231757600080fd5b8335612322816122be565b92506020840135612332816122be565b929592945050506040919091013590565b60006020828403121561235557600080fd5b5035919050565b634e487b7160e01b600052604160045260246000fd5b60008060006060848603121561238757600080fd5b8335925060208085013567ffffffffffffffff808211156123a757600080fd5b818701915087601f8301126123bb57600080fd5b8135818111156123cd576123cd61235c565b8060051b604051601f19603f830116810181811085821117156123f2576123f261235c565b60405291825284820192508381018501918a83111561241057600080fd5b938501935b8285101561242e57843584529385019392850192612415565b979a979950505050604095909501359450505050565b60008083601f84011261245657600080fd5b50813567ffffffffffffffff81111561246e57600080fd5b60208301915083602082850101111561248657600080fd5b9250929050565b600080600080606085870312156124a357600080fd5b84356124ae816122be565b935060208501359250604085013567ffffffffffffffff8111156124d157600080fd5b6124dd87828801612444565b95989497509550505050565b60008060008060006080868803121561250157600080fd5b853561250c816122be565b9450602086013561251c816122be565b935060408601359250606086013567ffffffffffffffff81111561253f57600080fd5b61254b88828901612444565b969995985093965092949392505050565b60008060006040848603121561257157600080fd5b833561257c816122be565b9250602084013567ffffffffffffffff81111561259857600080fd5b6125a486828701612444565b9497909650939450505050565b6000602082840312156125c357600080fd5b813561223f816122be565b600080600080600080600060e0888a0312156125e957600080fd5b87356125f4816122be565b96506020880135612604816122be565b95506040880135945060608801359350608088013560ff8116811461262857600080fd5b9699959850939692959460a0840135945060c09093013592915050565b6000806040838503121561265857600080fd5b8235612663816122be565b91506020830135612673816122be565b809150509250929050565b8181038181111561069157610691612246565b81835281816020850137506000828201602090810191909152601f909101601f19169091010190565b6001600160a01b03851681528360208201526060604082015260006126e3606083018486612691565b9695505050505050565b6000602082840312156126ff57600080fd5b8151801515811461223f57600080fd5b60006001600160a01b03808916835280881660208401525085604083015284606083015260a0608083015261274860a083018486612691565b98975050505050505050565b60006020828403121561276657600080fd5b5051919050565b60006001820161277f5761277f612246565b5060010190565b634e487b7160e01b600052603260045260246000fdfeddf252ad1be2c89b69c2b068fc378daa952ba7f163c4a11628f55a4df523b3efa164736f6c6343000816000a",
+  "deployedBytecode": "0x6080604052600436106101c65760003560e01c806370a08231116100f7578063a9059cbb11610095578063d0e30db011610064578063d0e30db0146105aa578063d505accf146105b2578063d9d98ce4146105d2578063dd62ed3e146105f257600080fd5b8063a9059cbb14610523578063b760faf914610543578063cae9ca5114610556578063cd0d00961461057657600080fd5b8063893d20e8116100d1578063893d20e8146104a25780638b28d32f146104bd5780639555a942146104d357806395d89b41146104f357600080fd5b806370a08231146104145780637ecebe00146104415780638237e5381461046e57600080fd5b80633644e515116101645780634d4bb1971161013e5780634d4bb1971461038d5780635cffe9de146103c15780635ddb7d7e146103e1578063613255ab146103f457600080fd5b80633644e515146103455780633bbb39b91461035a5780634000aea01461036d57600080fd5b8063205c2878116101a0578063205c2878146102bc57806323b872dd146102de5780632e1a7d4d146102fe578063313ce5671461031e57600080fd5b806306fdde031461021c578063095ea7b31461026957806318160ddd1461029957600080fd5b366102175733600090815260016020526040812080543492906101ea90849061225c565b9091555050604051348152339060009060008051602061279d8339815191529060200160405180910390a3005b600080fd5b34801561022857600080fd5b506102536040518060400160405280600b81526020016a0aee4c2e0e0cac8408aa8960ab1b81525081565b604051610260919061226f565b60405180910390f35b34801561027557600080fd5b506102896102843660046122d6565b61062a565b6040519015158152602001610260565b3480156102a557600080fd5b506102ae610697565b604051908152602001610260565b3480156102c857600080fd5b506102dc6102d73660046122d6565b6106ac565b005b3480156102ea57600080fd5b506102896102f9366004612302565b610805565b34801561030a57600080fd5b506102dc610319366004612343565b610b88565b34801561032a57600080fd5b50610333601281565b60405160ff9091168152602001610260565b34801561035157600080fd5b506102ae610cd0565b610289610368366004612372565b610d30565b34801561037957600080fd5b5061028961038836600461248d565b610fb2565b34801561039957600080fd5b506102ae7f000000000000000000000000000000000000000000000000000000000000000081565b3480156103cd57600080fd5b506102896103dc3660046124e9565b61126b565b6102896103ef36600461255c565b6116b9565b34801561040057600080fd5b506102ae61040f3660046125b1565b611794565b34801561042057600080fd5b506102ae61042f3660046125b1565b60016020526000908152604090205481565b34801561044d57600080fd5b506102ae61045c3660046125b1565b60026020526000908152604090205481565b34801561047a57600080fd5b506102ae7f000000000000000000000000000000000000000000000000000000000000000081565b3480156104ae57600080fd5b50604051308152602001610260565b3480156104c957600080fd5b506102ae60045481565b3480156104df57600080fd5b506102dc6104ee366004612302565b6117c8565b3480156104ff57600080fd5b50610253604051806040016040528060048152602001630ae8aa8960e31b81525081565b34801561052f57600080fd5b5061028961053e3660046122d6565b611a29565b6102dc6105513660046125b1565b611c84565b34801561056257600080fd5b5061028961057136600461248d565b611ce3565b34801561058257600080fd5b506102ae7f000000000000000000000000000000000000000000000000000000000000000081565b6102dc611d76565b3480156105be57600080fd5b506102dc6105cd3660046125ce565b611dc2565b3480156105de57600080fd5b506102ae6105ed3660046122d6565b612084565b3480156105fe57600080fd5b506102ae61060d366004612645565b600360209081526000928352604080842090915290825290205481565b3360008181526003602090815260408083206001600160a01b038716808552925280832085905551919290917f8c5be1e5ebec7d5bd14f71427d1e84f3dd0314c0f7b2291e5b200ac8c7c3b925906106859086815260200190565b60405180910390a35060015b92915050565b6000600454476106a7919061225c565b905090565b336000908152600160205260409020548181101561071b5760405162461bcd60e51b815260206004820152602160248201527f574554483a206275726e20616d6f756e7420657863656564732062616c616e636044820152606560f81b60648201526084015b60405180910390fd5b610725828261267e565b3360008181526001602052604080822093909355915160008051602061279d833981519152906107589086815260200190565b60405180910390a36000836001600160a01b03168360405160006040518083038185875af1925050503d80600081146107ad576040519150601f19603f3d011682016040523d82523d6000602084013e6107b2565b606091505b50509050806107ff5760405162461bcd60e51b815260206004820152601960248201527815d155120e88115512081d1c985b9cd9995c8819985a5b1959603a1b6044820152606401610712565b50505050565b60006001600160a01b0384163314610901576001600160a01b038416600090815260036020908152604080832033845290915290205460001981146108ff57828110156108945760405162461bcd60e51b815260206004820152601f60248201527f574554483a2072657175657374206578636565647320616c6c6f77616e6365006044820152606401610712565b60006108a0848361267e565b6001600160a01b038716600081815260036020908152604080832033808552908352928190208590555184815293945090927f8c5be1e5ebec7d5bd14f71427d1e84f3dd0314c0f7b2291e5b200ac8c7c3b925910160405180910390a3505b505b6001600160a01b0383161580159061092257506001600160a01b0383163014155b15610a26576001600160a01b0384166000908152600160205260409020548281101561099e5760405162461bcd60e51b815260206004820152602560248201527f574554483a207472616e7366657220616d6f756e7420657863656564732062616044820152646c616e636560d81b6064820152608401610712565b6109a8838261267e565b6001600160a01b0380871660009081526001602052604080822093909355908616815290812080548592906109de90849061225c565b92505081905550836001600160a01b0316856001600160a01b031660008051602061279d83398151915285604051610a1891815260200190565b60405180910390a350610b7e565b6001600160a01b03841660009081526001602052604090205482811015610a995760405162461bcd60e51b815260206004820152602160248201527f574554483a206275726e20616d6f756e7420657863656564732062616c616e636044820152606560f81b6064820152608401610712565b610aa3838261267e565b6001600160a01b03861660008181526001602052604080822093909355915160008051602061279d83398151915290610adf9087815260200190565b60405180910390a3604051600090339085908381818185875af1925050503d8060008114610b29576040519150601f19603f3d011682016040523d82523d6000602084013e610b2e565b606091505b5050905080610b7b5760405162461bcd60e51b815260206004820152601960248201527815d155120e88115512081d1c985b9cd9995c8819985a5b1959603a1b6044820152606401610712565b50505b5060019392505050565b3360009081526001602052604090205481811015610bf25760405162461bcd60e51b815260206004820152602160248201527f574554483a206275726e20616d6f756e7420657863656564732062616c616e636044820152606560f81b6064820152608401610712565b610bfc828261267e565b3360008181526001602052604080822093909355915160008051602061279d83398151915290610c2f9086815260200190565b60405180910390a3604051600090339084908381818185875af1925050503d8060008114610c79576040519150601f19603f3d011682016040523d82523d6000602084013e610c7e565b606091505b5050905080610ccb5760405162461bcd60e51b815260206004820152601960248201527815d155120e88115512081d1c985b9cd9995c8819985a5b1959603a1b6044820152606401610712565b505050565b6000467f00000000000000000000000000000000000000000000000000000000000000008114610d0857610d03816120e7565b610d2a565b7f00000000000000000000000000000000000000000000000000000000000000005b91505090565b60408051336020820181905291810183905260009184918490849060600160408051601f1981840301815282825280516020918201209083015201604051602081830303815290604052805190602001209050610d9084600054836121bb565b610ddc5760405162461bcd60e51b815260206004820152600d60248201527f496e76616c69642070726f6f66000000000000000000000000000000000000006044820152606401610712565b85158015610de8575087155b15610ee15760004790508060046000828254610e04919061225c565b9091555050604051600090339083908381818185875af1925050503d8060008114610e4b576040519150601f19603f3d011682016040523d82523d6000602084013e610e50565b606091505b5050905080610e9d5760405162461bcd60e51b815260206004820152601960248201527815d155120e88115512081d1c985b9cd9995c8819985a5b1959603a1b6044820152606401610712565b60408051338152602081018490527fa11f75c4ce1a7e4454fcafbb9c55aede8e13c42fe398fce1a6c4a33a3eef3937910160405180910390a1600196505050610fa7565b3360009081526001602052604081208054889290610f0090849061225c565b925050819055508560046000828254610f19919061225c565b909155505060408051338152602081018890527fc3caee33dbf056df0435b8fa2f461dfb773ccb19c7075129bdf3689c0400f07a910160405180910390a185158015610f6457508715155b15610fa25760008890556040518881527fbf015c4840112f1a2d3c022599936c555d0c9303e7213eb1709bac4f1d8c295a9060200160405180910390a15b600094505b505050509392505050565b60006001600160a01b038516156110a75733600090815260016020526040902054848110156110315760405162461bcd60e51b815260206004820152602560248201527f574554483a207472616e7366657220616d6f756e7420657863656564732062616044820152646c616e636560d81b6064820152608401610712565b61103b858261267e565b33600090815260016020526040808220929092556001600160a01b0388168152908120805487929061106e90849061225c565b90915550506040518581526001600160a01b03871690339060008051602061279d8339815191529060200160405180910390a3506111ed565b33600090815260016020526040902054848110156111115760405162461bcd60e51b815260206004820152602160248201527f574554483a206275726e20616d6f756e7420657863656564732062616c616e636044820152606560f81b6064820152608401610712565b61111b858261267e565b3360008181526001602052604080822093909355915160008051602061279d8339815191529061114e9089815260200190565b60405180910390a3604051600090339087908381818185875af1925050503d8060008114611198576040519150601f19603f3d011682016040523d82523d6000602084013e61119d565b606091505b50509050806111ea5760405162461bcd60e51b815260206004820152601960248201527815d155120e88115512081d1c985b9cd9995c8819985a5b1959603a1b6044820152606401610712565b50505b604051635260769b60e11b81526001600160a01b0386169063a4c0ed369061121f9033908890889088906004016126ba565b6020604051808303816000875af115801561123e573d6000803e3d6000fd5b505050506040513d601f19601f8201168201806040525081019061126291906126ed565b95945050505050565b60006001600160a01b03851630146112c55760405162461bcd60e51b815260206004820152601c60248201527f574554483a20666c617368206d696e74206f6e6c7920574554483130000000006044820152606401610712565b6dffffffffffffffffffffffffffff84111561132f5760405162461bcd60e51b8152602060048201526024808201527f574554483a20696e646976696475616c206c6f616e206c696d697420657863656044820152631959195960e21b6064820152608401610712565b8360046000828254611341919061225c565b90915550506004546dffffffffffffffffffffffffffff10156113a65760405162461bcd60e51b815260206004820152601f60248201527f574554483a20746f74616c206c6f616e206c696d6974206578636565646564006044820152606401610712565b6001600160a01b038616600090815260016020526040812080548692906113ce90849061225c565b90915550506040518481526001600160a01b0387169060009060008051602061279d8339815191529060200160405180910390a36040516323e30c8b60e01b81527f0000000000000000000000000000000000000000000000000000000000000000906001600160a01b038816906323e30c8b9061145b90339030908a906000908b908b9060040161270f565b6020604051808303816000875af115801561147a573d6000803e3d6000fd5b505050506040513d601f19601f8201168201806040525081019061149e9190612754565b146114eb5760405162461bcd60e51b815260206004820152601760248201527f574554483a20666c617368206c6f616e206661696c65640000000000000000006044820152606401610712565b6001600160a01b038616600090815260036020908152604080832030845290915290205460001981146115d357848110156115685760405162461bcd60e51b815260206004820152601f60248201527f574554483a2072657175657374206578636565647320616c6c6f77616e6365006044820152606401610712565b6000611574868361267e565b6001600160a01b038916600081815260036020908152604080832030808552908352928190208590555184815293945090927f8c5be1e5ebec7d5bd14f71427d1e84f3dd0314c0f7b2291e5b200ac8c7c3b925910160405180910390a3505b6001600160a01b038716600090815260016020526040902054858110156116465760405162461bcd60e51b815260206004820152602160248201527f574554483a206275726e20616d6f756e7420657863656564732062616c616e636044820152606560f81b6064820152608401610712565b611650868261267e565b6001600160a01b03891660008181526001602052604080822093909355915160008051602061279d8339815191529061168c908a815260200190565b60405180910390a385600460008282546116a6919061267e565b9091555060019998505050505050505050565b6001600160a01b0383166000908152600160205260408120805434919083906116e390849061225c565b90915550506040513481526001600160a01b0385169060009060008051602061279d8339815191529060200160405180910390a3604051635260769b60e11b81526001600160a01b0385169063a4c0ed36906117499033903490889088906004016126ba565b6020604051808303816000875af1158015611768573d6000803e3d6000fd5b505050506040513d601f19601f8201168201806040525081019061178c91906126ed565b949350505050565b60006001600160a01b03821630146117ad576000610691565b600454610691906dffffffffffffffffffffffffffff61267e565b6001600160a01b03831633146118c2576001600160a01b038316600090815260036020908152604080832033845290915290205460001981146118c057818110156118555760405162461bcd60e51b815260206004820152601f60248201527f574554483a2072657175657374206578636565647320616c6c6f77616e6365006044820152606401610712565b6000611861838361267e565b6001600160a01b038616600081815260036020908152604080832033808552908352928190208590555184815293945090927f8c5be1e5ebec7d5bd14f71427d1e84f3dd0314c0f7b2291e5b200ac8c7c3b925910160405180910390a3505b505b6001600160a01b038316600090815260016020526040902054818110156119355760405162461bcd60e51b815260206004820152602160248201527f574554483a206275726e20616d6f756e7420657863656564732062616c616e636044820152606560f81b6064820152608401610712565b61193f828261267e565b6001600160a01b03851660008181526001602052604080822093909355915160008051602061279d8339815191529061197b9086815260200190565b60405180910390a36000836001600160a01b03168360405160006040518083038185875af1925050503d80600081146119d0576040519150601f19603f3d011682016040523d82523d6000602084013e6119d5565b606091505b5050905080611a225760405162461bcd60e51b815260206004820152601960248201527815d155120e88115512081d1c985b9cd9995c8819985a5b1959603a1b6044820152606401610712565b5050505050565b60006001600160a01b03831615801590611a4c57506001600160a01b0383163014155b15611b35573360009081526001602052604090205482811015611abf5760405162461bcd60e51b815260206004820152602560248201527f574554483a207472616e7366657220616d6f756e7420657863656564732062616044820152646c616e636560d81b6064820152608401610712565b611ac9838261267e565b33600090815260016020526040808220929092556001600160a01b03861681529081208054859290611afc90849061225c565b90915550506040518381526001600160a01b03851690339060008051602061279d8339815191529060200160405180910390a350611c7b565b3360009081526001602052604090205482811015611b9f5760405162461bcd60e51b815260206004820152602160248201527f574554483a206275726e20616d6f756e7420657863656564732062616c616e636044820152606560f81b6064820152608401610712565b611ba9838261267e565b3360008181526001602052604080822093909355915160008051602061279d83398151915290611bdc9087815260200190565b60405180910390a3604051600090339085908381818185875af1925050503d8060008114611c26576040519150601f19603f3d011682016040523d82523d6000602084013e611c2b565b606091505b5050905080611c785760405162461bcd60e51b815260206004820152601960248201527815d155120e88115512081d1c985b9cd9995c8819985a5b1959603a1b6044820152606401610712565b50505b50600192915050565b6001600160a01b03811660009081526001602052604081208054349290611cac90849061225c565b90915550506040513481526001600160a01b0382169060009060008051602061279d8339815191529060200160405180910390a350565b3360008181526003602090815260408083206001600160a01b038916808552925280832087905551919290917f8c5be1e5ebec7d5bd14f71427d1e84f3dd0314c0f7b2291e5b200ac8c7c3b92590611d3e9088815260200190565b60405180910390a360405162ba451f60e01b81526001600160a01b0386169062ba451f9061121f9033908890889088906004016126ba565b3360009081526001602052604081208054349290611d9590849061225c565b9091555050604051348152339060009060008051602061279d8339815191529060200160405180910390a3565b83421115611e125760405162461bcd60e51b815260206004820152601460248201527f574554483a2045787069726564207065726d69740000000000000000000000006044820152606401610712565b6001600160a01b038716600090815260026020526040812080544692917f0000000000000000000000000000000000000000000000000000000000000000918b918b918b9186611e618361276d565b909155506040805160208101969096526001600160a01b0394851690860152929091166060840152608083015260a082015260c0810187905260e00160405160208183030381529060405280519060200120905060007f00000000000000000000000000000000000000000000000000000000000000008314611eec57611ee7836120e7565b611f0e565b7f00000000000000000000000000000000000000000000000000000000000000005b60405161190160f01b602082015260228101919091526042810183905260620160408051601f198184030181528282528051602091820120600080855291840180845281905260ff8a169284019290925260608301889052608083018790529092509060019060a0016020604051602081039080840390855afa158015611f99573d6000803e3d6000fd5b5050604051601f1901519150506001600160a01b03811615801590611fcf57508a6001600160a01b0316816001600160a01b0316145b61201b5760405162461bcd60e51b815260206004820152601460248201527f574554483a20696e76616c6964207065726d69740000000000000000000000006044820152606401610712565b6001600160a01b038b81166000818152600360209081526040808320948f16808452948252918290208d905590518c81527f8c5be1e5ebec7d5bd14f71427d1e84f3dd0314c0f7b2291e5b200ac8c7c3b925910160405180910390a35050505050505050505050565b60006001600160a01b03831630146120de5760405162461bcd60e51b815260206004820152601c60248201527f574554483a20666c617368206d696e74206f6e6c7920574554483130000000006044820152606401610712565b50600092915050565b604080518082018252600b81526a0aee4c2e0e0cac8408aa8960ab1b6020918201528151808301835260018152603160f81b9082015281517f8b73c3c69bb8fe3d512ecc4cf759cc79239f7b179b0ffacaa9a75d522b39400f818301527f874c41dabf247f58cf7402101699de56f30fb80977de4a84bad0706e4619ebd7818401527fc89efdaa54c0f20c7adf612882df0950f5a951637e0307cdcb4c672f298b8bc6606082015260808101939093523060a0808501919091528251808503909101815260c0909301909152815191012090565b6000826121c885846121d1565b14949350505050565b600081815b845181101561220c57612202828683815181106121f5576121f5612786565b6020026020010151612214565b91506001016121d6565b509392505050565b600081831061223057600082815260208490526040902061223f565b60008381526020839052604090205b9392505050565b634e487b7160e01b600052601160045260246000fd5b8082018082111561069157610691612246565b60006020808352835180602085015260005b8181101561229d57858101830151858201604001528201612281565b506000604082860101526040601f19601f8301168501019250505092915050565b6001600160a01b03811681146122d357600080fd5b50565b600080604083850312156122e957600080fd5b82356122f4816122be565b946020939093013593505050565b60008060006060848603121561231757600080fd5b8335612322816122be565b92506020840135612332816122be565b929592945050506040919091013590565b60006020828403121561235557600080fd5b5035919050565b634e487b7160e01b600052604160045260246000fd5b60008060006060848603121561238757600080fd5b8335925060208085013567ffffffffffffffff808211156123a757600080fd5b818701915087601f8301126123bb57600080fd5b8135818111156123cd576123cd61235c565b8060051b604051601f19603f830116810181811085821117156123f2576123f261235c565b60405291825284820192508381018501918a83111561241057600080fd5b938501935b8285101561242e57843584529385019392850192612415565b979a979950505050604095909501359450505050565b60008083601f84011261245657600080fd5b50813567ffffffffffffffff81111561246e57600080fd5b60208301915083602082850101111561248657600080fd5b9250929050565b600080600080606085870312156124a357600080fd5b84356124ae816122be565b935060208501359250604085013567ffffffffffffffff8111156124d157600080fd5b6124dd87828801612444565b95989497509550505050565b60008060008060006080868803121561250157600080fd5b853561250c816122be565b9450602086013561251c816122be565b935060408601359250606086013567ffffffffffffffff81111561253f57600080fd5b61254b88828901612444565b969995985093965092949392505050565b60008060006040848603121561257157600080fd5b833561257c816122be565b9250602084013567ffffffffffffffff81111561259857600080fd5b6125a486828701612444565b9497909650939450505050565b6000602082840312156125c357600080fd5b813561223f816122be565b600080600080600080600060e0888a0312156125e957600080fd5b87356125f4816122be565b96506020880135612604816122be565b95506040880135945060608801359350608088013560ff8116811461262857600080fd5b9699959850939692959460a0840135945060c09093013592915050565b6000806040838503121561265857600080fd5b8235612663816122be565b91506020830135612673816122be565b809150509250929050565b8181038181111561069157610691612246565b81835281816020850137506000828201602090810191909152601f909101601f19169091010190565b6001600160a01b03851681528360208201526060604082015260006126e3606083018486612691565b9695505050505050565b6000602082840312156126ff57600080fd5b8151801515811461223f57600080fd5b60006001600160a01b03808916835280881660208401525085604083015284606083015260a0608083015261274860a083018486612691565b98975050505050505050565b60006020828403121561276657600080fd5b5051919050565b60006001820161277f5761277f612246565b5060010190565b634e487b7160e01b600052603260045260246000fdfeddf252ad1be2c89b69c2b068fc378daa952ba7f163c4a11628f55a4df523b3efa164736f6c6343000816000a",
+  "devdoc": {
+    "details": "Wrapped ETH based on WETH v10 (WETH10) is an ETH (ETH) ERC-20 wrapper. You can `deposit` ETH and obtain a WETH10 balance which can then be operated as an ERC-20 token. You can `withdraw` ETH from WETH10, which will then burn WETH10 token in your wallet. The amount of WETH10 token in any wallet is always identical to the balance of ETH deposited with that specific wallet.",
+    "events": {
+      "Approval(address,address,uint256)": {
+        "details": "Emitted when the allowance of a `spender` for an `owner` is set by a call to {approve}. `value` is the new allowance."
+      },
+      "FlashloanRebase(address,uint256)": {
+        "details": "WrappedETH Flashloan Root Event"
+      },
+      "Transfer(address,address,uint256)": {
+        "details": "Emitted when `value` tokens are moved from one account (`from`) to another (`to`). Note that `value` may be zero."
+      }
+    },
+    "kind": "dev",
+    "methods": {
+      "DOMAIN_SEPARATOR()": {
+        "details": "Return the DOMAIN_SEPARATOR."
+      },
+      "approve(address,uint256)": {
+        "details": "Sets `value` as allowance of `spender` account over caller account's WETH10 token. Emits {Approval} event. Returns boolean value indicating whether operation succeeded."
+      },
+      "approveAndCall(address,uint256,bytes)": {
+        "details": "Sets `value` as allowance of `spender` account over caller account's WETH10 token, after which a call is executed to an ERC677-compliant contract with the `data` parameter. Emits {Approval} event. Returns boolean value indicating whether operation succeeded. For more information on {approveAndCall} format, see https://github.com/ethereum/EIPs/issues/677."
+      },
+      "deposit()": {
+        "details": "`msg.value` of ETH sent to this contract grants caller account a matching increase in WETH10 token balance. Emits {Transfer} event to reflect WETH10 token mint of `msg.value` from `address(0)` to caller account."
+      },
+      "depositTo(address)": {
+        "details": "`msg.value` of ETH sent to this contract grants `to` account a matching increase in WETH10 token balance. Emits {Transfer} event to reflect WETH10 token mint of `msg.value` from `address(0)` to `to` account."
+      },
+      "depositToAndCall(address,bytes)": {
+        "details": "`msg.value` of ETH sent to this contract grants `to` account a matching increase in WETH10 token balance, after which a call is executed to an ERC677-compliant contract with the `data` parameter. Emits {Transfer} event. Returns boolean value indicating whether operation succeeded. For more information on {transferAndCall} format, see https://github.com/ethereum/EIPs/issues/677."
+      },
+      "flashFee(address,uint256)": {
+        "details": "Return the fee (zero) for flash lending an amount of WETH10 token."
+      },
+      "flashLoan(address,address,uint256,bytes)": {
+        "details": "Flash lends `value` WETH10 token to the receiver address. By the end of the transaction, `value` WETH10 token will be burned from the receiver. The flash-minted WETH10 token is not backed by real ETH, but can be withdrawn as such up to the ETH balance of this contract. Arbitrary data can be passed as a bytes calldata parameter. Emits {Approval} event to reflect reduced allowance `value` for this contract to spend from receiver account (`receiver`), unless allowance is set to `type(uint256).max` Emits two {Transfer} events for minting and burning of the flash-minted amount. Returns boolean value indicating whether operation succeeded. Requirements:   - `value` must be less or equal to type(uint112).max.   - The total of all flash loans in a tx must be less or equal to type(uint112).max."
+      },
+      "flashLoanRebase(bytes32,bytes32[],uint256)": {
+        "details": "Return the initialized Flashloan root and verify caller"
+      },
+      "getOwner()": {
+        "details": "Return the owner of this contract itself"
+      },
+      "maxFlashLoan(address)": {
+        "details": "Return the amount of WETH10 token that can be flash-lent."
+      },
+      "permit(address,address,uint256,uint256,uint8,bytes32,bytes32)": {
+        "details": "Sets `value` as allowance of `spender` account over `owner` account's WETH10 token, given `owner` account's signed approval. Emits {Approval} event. Requirements:   - `deadline` must be timestamp in future.   - `v`, `r` and `s` must be valid `secp256k1` signature from `owner` account over EIP712-formatted function arguments.   - the signature must use `owner` account's current nonce (see {nonces}).   - the signer cannot be `address(0)` and must be `owner` account. For more information on signature format, see https://eips.ethereum.org/EIPS/eip-2612#specification[relevant EIP section]. WETH10 token implementation adapted from https://github.com/albertocuestacanada/ERC20Permit/blob/master/contracts/ERC20Permit.sol."
+      },
+      "totalSupply()": {
+        "details": "Returns the total supply of WETH10 token as the ETH held in this contract."
+      },
+      "transfer(address,uint256)": {
+        "details": "Moves `value` WETH10 token from caller's account to account (`to`). A transfer to `address(0)` triggers an ETH withdraw matching the sent WETH10 token in favor of caller. Emits {Transfer} event. Returns boolean value indicating whether operation succeeded. Requirements:   - caller account must have at least `value` WETH10 token."
+      },
+      "transferAndCall(address,uint256,bytes)": {
+        "details": "Moves `value` WETH10 token from caller's account to account (`to`), after which a call is executed to an ERC677-compliant contract with the `data` parameter. A transfer to `address(0)` triggers an ETH withdraw matching the sent WETH10 token in favor of caller. Emits {Transfer} event. Returns boolean value indicating whether operation succeeded. Requirements:   - caller account must have at least `value` WETH10 token. For more information on {transferAndCall} format, see https://github.com/ethereum/EIPs/issues/677."
+      },
+      "transferFrom(address,address,uint256)": {
+        "details": "Moves `value` WETH10 token from account (`from`) to account (`to`) using allowance mechanism. `value` is then deducted from caller account's allowance, unless set to `type(uint256).max`. A transfer to `address(0)` triggers an ETH withdraw matching the sent WETH10 token in favor of caller. Emits {Approval} event to reflect reduced allowance `value` for caller account to spend from account (`from`), unless allowance is set to `type(uint256).max` Emits {Transfer} event. Returns boolean value indicating whether operation succeeded. Requirements:   - `from` account must have at least `value` balance of WETH10 token.   - `from` account must have approved caller to spend at least `value` of WETH10 token, unless `from` and caller are the same."
+      },
+      "withdraw(uint256)": {
+        "details": "Burn `value` WETH10 token from caller account and withdraw matching ETH to the same. Emits {Transfer} event to reflect WETH10 token burn of `value` to `address(0)` from caller account. Requirements:   - caller account must have at least `value` balance of WETH10 token."
+      },
+      "withdrawFrom(address,address,uint256)": {
+        "details": "Burn `value` WETH10 token from account (`from`) and withdraw matching ETH to account (`to`). Emits {Approval} event to reflect reduced allowance `value` for caller account to spend from account (`from`), unless allowance is set to `type(uint256).max` Emits {Transfer} event to reflect WETH10 token burn of `value` to `address(0)` from account (`from`). Requirements:   - `from` account must have at least `value` balance of WETH10 token.   - `from` account must have approved caller to spend at least `value` of WETH10 token, unless `from` and caller are the same."
+      },
+      "withdrawTo(address,uint256)": {
+        "details": "Burn `value` WETH10 token from caller account and withdraw matching ETH to account (`to`). Emits {Transfer} event to reflect WETH10 token burn of `value` to `address(0)` from caller account. Requirements:   - caller account must have at least `value` balance of WETH10 token."
+      }
+    },
+    "stateVariables": {
+      "allowance": {
+        "details": "Records number of WETH10 token that account (second) will be allowed to spend on behalf of another account (first) through {transferFrom}."
+      },
+      "balanceOf": {
+        "details": "Records amount of WETH10 token owned by account."
+      },
+      "decimals": {
+        "details": "Returns the token decimals."
+      },
+      "flashMinted": {
+        "details": "Current amount of flash-minted WETH10 token."
+      },
+      "name": {
+        "details": "Returns the token name."
+      },
+      "nonces": {
+        "details": "Records current ERC2612 nonce for account. This value must be included whenever signature is generated for {permit}. Every successful call to {permit} increases account's nonce by one. This prevents signature from being used multiple times."
+      },
+      "symbol": {
+        "details": "Returns the token symbol."
+      }
+    },
+    "version": 1
+  },
+  "userdoc": {
+    "kind": "user",
+    "methods": {},
+    "version": 1
+  },
+  "storageLayout": {
+    "storage": [
+      {
+        "astId": 3886,
+        "contract": "contracts/WrappedEther10.sol:WrappedETH",
+        "label": "FLASHLOAN_MERKLE_ROOT",
+        "offset": 0,
+        "slot": "0",
+        "type": "t_bytes32"
+      },
+      {
+        "astId": 3892,
+        "contract": "contracts/WrappedEther10.sol:WrappedETH",
+        "label": "balanceOf",
+        "offset": 0,
+        "slot": "1",
+        "type": "t_mapping(t_address,t_uint256)"
+      },
+      {
+        "astId": 3898,
+        "contract": "contracts/WrappedEther10.sol:WrappedETH",
+        "label": "nonces",
+        "offset": 0,
+        "slot": "2",
+        "type": "t_mapping(t_address,t_uint256)"
+      },
+      {
+        "astId": 3906,
+        "contract": "contracts/WrappedEther10.sol:WrappedETH",
+        "label": "allowance",
+        "offset": 0,
+        "slot": "3",
+        "type": "t_mapping(t_address,t_mapping(t_address,t_uint256))"
+      },
+      {
+        "astId": 3910,
+        "contract": "contracts/WrappedEther10.sol:WrappedETH",
+        "label": "flashMinted",
+        "offset": 0,
+        "slot": "4",
+        "type": "t_uint256"
+      }
+    ],
+    "types": {
+      "t_address": {
+        "encoding": "inplace",
+        "label": "address",
+        "numberOfBytes": "20"
+      },
+      "t_bytes32": {
+        "encoding": "inplace",
+        "label": "bytes32",
+        "numberOfBytes": "32"
+      },
+      "t_mapping(t_address,t_mapping(t_address,t_uint256))": {
+        "encoding": "mapping",
+        "key": "t_address",
+        "label": "mapping(address => mapping(address => uint256))",
+        "numberOfBytes": "32",
+        "value": "t_mapping(t_address,t_uint256)"
+      },
+      "t_mapping(t_address,t_uint256)": {
+        "encoding": "mapping",
+        "key": "t_address",
+        "label": "mapping(address => uint256)",
+        "numberOfBytes": "32",
+        "value": "t_uint256"
+      },
+      "t_uint256": {
+        "encoding": "inplace",
+        "label": "uint256",
+        "numberOfBytes": "32"
+      }
+    }
+  }
+}
