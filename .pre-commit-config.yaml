@@ -4,6 +4,6 @@ repos:
     hooks:
       - id: codespell
         args:
-          - --ignore-words-list=hass
+          - --ignore-words-list=has
           - --quiet-level=2
         exclude: ^yarn\.lock$
