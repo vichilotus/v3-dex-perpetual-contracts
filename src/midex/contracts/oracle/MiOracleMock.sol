@@ -85,8 +85,18 @@ contract MiOracleMock {
         IMiOracle(request.owner).miOracleCall(_reqId, true, request.payload);
     }
 
-    function setPriceFeedStore(address _priceFeedStore, uint256 _tokenIndex) external {
+    function _setPriceFeedStore(address _priceFeedStore) internal {
+        require(_priceFeedStore != address(0), 'address invalid');
+        uint256 _tokenIndex = IPriceFeedStore(_priceFeedStore).tokenIndex();
+        require(priceFeedStores[_tokenIndex] == address(0), 'PriceFeed exist');
         priceFeedStores[_tokenIndex] = _priceFeedStore;
+    }
+
+    function setPriceFeedStore(address[] calldata _priceFeedStores) external {
+        uint256 _length = _priceFeedStores.length;
+        for (uint256 i = 0; i < _length; ++i) {
+            _setPriceFeedStore(_priceFeedStores[i]);
+        }
     }
 
     function refreshLastPrice(uint256[] memory _tokenIndexes, uint256 _spaceTime, uint256 _count) external {

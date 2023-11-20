@@ -1,4 +1,6 @@
 const BN = require('bn.js')
+const { ethers } = require('ethers')
+const fetch = require('node-fetch')
 
 const maxUint256 = ethers.constants.MaxUint256
 
@@ -99,6 +101,36 @@ function getPriceBitArray(prices) {
     return priceBitArray
 }
 
+function getTimestamp() {
+    return Math.floor(new Date().getTime() / 1000)
+}
+
+function sleep(ms) {
+    return new Promise((resolve) => setTimeout(resolve, ms))
+}
+
+function getURL(url) {
+    return fetch(url).then((res) => res.text())
+}
+
+async function getJSONRequest(url) {
+    return JSON.parse(await getURL(url))
+}
+
+function getProvider(rpc) {
+    return new ethers.providers.JsonRpcProvider(rpc)
+}
+
+function getWeb3(rpc) {
+    return new Web3(rpc)
+}
+
+function getSigner(privateKey, rpc) {
+    const provider = getProvider(rpc)
+    const signer = new ethers.Wallet(privateKey, provider)
+    return signer
+}
+
 function getPriceBits(prices) {
     if (prices.length > 8) {
         throw new Error('max prices.length exceeded')
@@ -125,19 +157,25 @@ function getPriceBits(prices) {
 }
 
 module.exports = {
-    newWallet,
-    maxUint256,
     bigNumberify,
     expandDecimals,
-    mineBlock,
-    increaseTime,
-    increaseBlockTime,
     gasUsed,
-    getNetworkFee,
-    reportGasUsed,
     getBlockTime,
-    getTxnBalances,
-    print,
+    getJSONRequest,
+    getNetworkFee,
     getPriceBitArray,
     getPriceBits,
+    getProvider,
+    getSigner,
+    getTimestamp,
+    getTxnBalances,
+    getWeb3,
+    increaseBlockTime,
+    increaseTime,
+    maxUint256,
+    mineBlock,
+    newWallet,
+    print,
+    reportGasUsed,
+    sleep,
 }

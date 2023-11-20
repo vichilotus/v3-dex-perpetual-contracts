@@ -61,6 +61,7 @@ const contactAddress = {
     timeLock: deployedAddress['TimeLock'],
     fMILP: deployedAddress['fMILP (Fee MILP)'],
     feeMilpDistributor: deployedAddress['feeMilpDistributor'],
+    nativeToken: deployedAddress['nativeToken']
 }
 
 function getContractAddress(name, allowEmpty = false) {

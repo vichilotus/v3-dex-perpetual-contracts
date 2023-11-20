@@ -20,12 +20,15 @@ async function deployMiOracle(weth) {
     busdPriceFeed = await deployContract('PriceFeedStoreMock', [miOracle.address, 'BUSD/USD Price Feed', tokenIndexes.BUSD, 8])
     usdcPriceFeed = await deployContract('PriceFeedStoreMock', [miOracle.address, 'USDC/USD Price Feed', tokenIndexes.USDC, 8])
 
-    await miOracle.setPriceFeedStore(btcPriceFeed.address, tokenIndexes.BTC)
-    await miOracle.setPriceFeedStore(ethPriceFeed.address, tokenIndexes.ETH)
-    await miOracle.setPriceFeedStore(bnbPriceFeed.address, tokenIndexes.BNB)
-    await miOracle.setPriceFeedStore(usdtPriceFeed.address, tokenIndexes.USDT)
-    await miOracle.setPriceFeedStore(busdPriceFeed.address, tokenIndexes.BUSD)
-    await miOracle.setPriceFeedStore(usdcPriceFeed.address, tokenIndexes.USDC)
+    const priceFeedList = [
+        btcPriceFeed.address,
+        ethPriceFeed.address,
+        bnbPriceFeed.address,
+        usdtPriceFeed.address,
+        busdPriceFeed.address,
+        usdcPriceFeed.address,
+    ]
+    await miOracle.setPriceFeedStore(priceFeedList)
 
     // set reqFee
     await miOracle.setFulfillFee(fulfillFee)

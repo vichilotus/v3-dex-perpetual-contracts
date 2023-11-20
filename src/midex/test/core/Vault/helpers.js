@@ -10,20 +10,6 @@ const tokenIndexes = {
     USDT: 3,
     BUSD: 4,
     USDC: 5,
-    DAI: 6,
-    XRP: 7,
-    DOGE: 8,
-    TRX: 9,
-    ADA: 10,
-    MATIC: 11,
-    SOL: 12,
-    DOT: 13,
-    AJAX: 14,
-    FTM: 15,
-    NEAR: 16,
-    ATOM: 17,
-    OP: 18,
-    ARB: 19,
 }
 
 async function initVaultErrors(vault) {

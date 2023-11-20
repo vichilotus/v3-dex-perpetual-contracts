@@ -3,6 +3,7 @@ require('@nomiclabs/hardhat-etherscan')
 require('@nomiclabs/hardhat-waffle')
 require('solidity-coverage')
 require('@nomiclabs/hardhat-web3')
+require('@nomiclabs/hardhat-ethers')
 
 task('accounts', 'Prints the list of accounts', async (taskArgs, hre) => {
   const accounts = await hre.ethers.getSigners()
