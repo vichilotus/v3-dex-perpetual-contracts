@@ -32,7 +32,7 @@ module.exports = {
       url: `${process.env.BASE_GOERLI_RPC}`,
       chainId: parseInt(`${process.env.BASE_GOERLI_CHAIN_ID}`),
       gasPrice: parseInt(`${process.env.BASE_GOERLI_GAS_PRICE}`) * 10 ** 5,
-      accounts: { mnemonic: `${process.env.MNEMONIC_MAINNET}` },
+      accounts: { mnemonic: `${process.env.BASE_GOERLI_MNEMONIC}` },
     },
   },
   etherscan: {

@@ -8,7 +8,7 @@ const network = process.env.HARDHAT_NETWORK || 'baseGoerli'
 const addressFilesPath = path.join(__dirname, '..', '..', `.addresses-${process.env.HARDHAT_NETWORK}.json`)
 const deployedAddress = readDeployedAddresses()
 
-const contactAddress = {
+const contractAddress = {
     // address signer
     deployer: config[getChainId(network)].deployer, // signer1
     signer2: config[getChainId(network)].signer2,
@@ -23,22 +23,46 @@ const contactAddress = {
     mintReceiver: config[getChainId(network)].mintReceiver,
 
     // token address
-    btc: deployedAddress['BTC'],
+    btc: deployedAddress['btcFaucet'],
     weth: config[getChainId(network)].weth,
-    bnb: deployedAddress['BNB'],
-    usdt: deployedAddress['USDT'],
-    usdc: deployedAddress['USDC'],
-    matic: deployedAddress['MATIC'],
-    op: deployedAddress['OP'],
-    arb: deployedAddress['ARB'],
+    bnb: deployedAddress['bnbFaucet'],
+    usdt: deployedAddress['usdtFaucet'],
+    busd: deployedAddress['busdFaucet'],
+    usdc: deployedAddress['usdcFaucet'],
+    dai: deployedAddress['daiFaucet'],
+    xrp: deployedAddress['xrpFaucet'],
+    doge: deployedAddress['dogeFaucet'],
+    trx: deployedAddress['trxFaucet'],
+    ada: deployedAddress['adaFaucet'],
+    matic: deployedAddress['maticFaucet'],
+    sol: deployedAddress['solFaucet'],
+    dot: deployedAddress['dotFaucet'],
+    link: deployedAddress['linkFaucet'],
+    ftm: deployedAddress['ftmFaucet'],
+    near: deployedAddress['nearFaucet'],
+    atom: deployedAddress['atomFaucet'],
+    op: deployedAddress['opFaucet'],
+    arb: deployedAddress['arbFaucet'],
 
     // miOracle price feed
     btcPriceFeed: config[getChainId(network)].btcPriceFeed,
     ethPriceFeed: config[getChainId(network)].ethPriceFeed,
     bnbPriceFeed: config[getChainId(network)].bnbPriceFeed,
     usdtPriceFeed: config[getChainId(network)].usdtPriceFeed,
+    busdPriceFeed: config[getChainId(network)].busdPriceFeed,
     usdcPriceFeed: config[getChainId(network)].usdcPriceFeed,
+    daiPriceFeed: config[getChainId(network)].daiPriceFeed,
+    xrpPriceFeed: config[getChainId(network)].xrpPriceFeed,
+    dogePriceFeed: config[getChainId(network)].dogePriceFeed,
+    trxPriceFeed: config[getChainId(network)].trxPriceFeed,
+    adaPriceFeed: config[getChainId(network)].adaPriceFeed,
     maticPriceFeed: config[getChainId(network)].maticPriceFeed,
+    solPriceFeed: config[getChainId(network)].solPriceFeed,
+    dotPriceFeed: config[getChainId(network)].dotPriceFeed,
+    linkPriceFeed: config[getChainId(network)].linkPriceFeed,
+    ftmPriceFeed: config[getChainId(network)].ftmPriceFeed,
+    nearPriceFeed: config[getChainId(network)].nearPriceFeed,
+    atomPriceFeed: config[getChainId(network)].atomPriceFeed,
     opPriceFeed: config[getChainId(network)].opPriceFeed,
     arbPriceFeed: config[getChainId(network)].arbPriceFeed,
 
@@ -61,20 +85,19 @@ const contactAddress = {
     timeLock: deployedAddress['TimeLock'],
     fMILP: deployedAddress['fMILP (Fee MILP)'],
     feeMilpDistributor: deployedAddress['feeMilpDistributor'],
-    nativeToken: deployedAddress['nativeToken']
+    nativeToken: deployedAddress['nativeToken'],
 }
 
-function getContractAddress(name, allowEmpty = false) {
-    const addr = contactAddress[name]
-    if (!addr) {
+function getContractAddress(contractName, allowEmpty) {
+    const address = contractAddress[contractName]
+    if (!address) {
         if (allowEmpty) {
             return ''
         }
-
-        throw new Error('not found ' + name + ' address')
+        throw new Error('not found ' + contractName + ' address')
     }
-
-    return addr
+    console.log(contractName, address)
+    return address
 }
 
 const readCsv = async (file) => {
